@@ -72,7 +72,7 @@ if has('lua')
     \ }
 endif
 
-:" neocomplete {{{
+" neocomplete {{{
 let g:neocomplete#enable_at_startup               = 1
 let g:neocomplete#auto_completion_start_length    = 3
 let g:neocomplete#enable_ignore_case              = 1
@@ -117,13 +117,13 @@ nnoremap <silent><C-u><C-j> :<C-u>VimFilerBufferDir -split -simple -winwidth=35 
 "括弧を自動的に閉じる
 NeoBundle 'Townk/vim-autoclose'
 
-"if終了宣言を自動挿入
-NeoBundleLazy 'tpope/vim-endwise', {
-  \ 'autoload' : { 'insert' : 1,}}
+NeoBundle "kana/vim-smartinput"
+NeoBundle "cohama/vim-smartinput-endwise"
 
-NeoBundle 'glidenote/memolist.vim'
 
 "メモリスト
+NeoBundle 'glidenote/memolist.vim'
+
 " memolist {{{
 let g:memolist_path = expand('~/GoogleDrive/memolist')
 let g:memolist_gfixgrep = 1
@@ -347,6 +347,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 """""""""""""""""""""""""""""
 
+call smartinput_endwise#define_default_rules()
 
 "-------------------------------------------------
 """ neocomplcache設定
