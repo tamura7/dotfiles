@@ -15,4 +15,5 @@ do
 done
 
 mkdir $HOME/.vimbackup
+git submodule add https://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
 
