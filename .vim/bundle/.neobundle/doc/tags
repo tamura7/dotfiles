@@ -458,8 +458,6 @@ EasyMotion_space_jump_first	easymotion.txt	/*EasyMotion_space_jump_first*
 EasyMotion_use_migemo	easymotion.txt	/*EasyMotion_use_migemo*
 EasyMotion_use_upper	easymotion.txt	/*EasyMotion_use_upper*
 Emmet	emmet.txt	/*Emmet*
-FixWhitespace	trailing-whitespace.txt	/*FixWhitespace*
-FixWhitespace-variables	trailing-whitespace.txt	/*FixWhitespace-variables*
 MatchError	matchit.txt	/*MatchError*
 NERDTree	NERD_tree.txt	/*NERDTree*
 NERDTree-?	NERD_tree.txt	/*NERDTree-?*
@@ -1330,7 +1328,6 @@ tcomment#GuessCommentType()	tcomment.txt	/*tcomment#GuessCommentType()*
 tcomment-maps	tcomment.txt	/*tcomment-maps*
 tcomment-operator	tcomment.txt	/*tcomment-operator*
 tcomment.txt	tcomment.txt	/*tcomment.txt*
-trailing-whitespace.txt	trailing-whitespace.txt	/*trailing-whitespace.txt*
 unite	unite.txt	/*unite*
 unite#action#do_candidates()	unite.txt	/*unite#action#do_candidates()*
 unite#custom#action()	unite.txt	/*unite#custom#action()*

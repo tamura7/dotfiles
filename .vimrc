@@ -48,7 +48,7 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
 " 行末の半角スペースを可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
+"NeoBundle 'bronson/vim-trailing-whitespace'
 
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'

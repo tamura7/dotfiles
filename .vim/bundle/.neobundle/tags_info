@@ -27,7 +27,6 @@ vim-node
 vim-smartinput
 vim-smartinput-endwise
 vim-surround
-vim-trailing-whitespace
 vimfiler
 vimproc
 yankround.vim

@@ -13,8 +13,6 @@ alias ssh="~/.ssh-theme"
 # Your previous /Users/tamuraakihiro/.bash_profile file was backed up as /Users/tamuraakihiro/.bash_profile.macports-saved_2017-04-10_at_16:44:05
 ##
 
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
 
 # MacPorts Installer addition on 2017-04-10_at_16:44:05: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
