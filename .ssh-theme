@@ -1,0 +1,13 @@
+#!/bin/bash
+ set_profile() {
+ /usr/bin/osascript -e "tell application \"Terminal\" to set current settings of first window to settings set \"$1\""
+ }
+
+if [[ "$@" == online_pg || "$@" == ls-al ]]; then
+ set_profile "Pro"
+ ssh $@
+ set_profile "Solarized Dark"
+else
+ ssh $@
+ fi
+

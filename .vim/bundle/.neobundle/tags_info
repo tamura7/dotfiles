@@ -1,0 +1,17 @@
+AnsiEsc.vim
+neobundle.vim
+neomru.vim
+neosnippet
+neosnippet-snippets
+nerdtree
+tcomment_vim
+unite.vim
+vim-autoclose
+vim-fugitive
+vim-indent-guides
+vim-less
+vim-surround
+vim-trailing-whitespace
+vimfiler
+vimproc
+yankround.vim
