@@ -249,6 +249,7 @@ set expandtab
 set shiftwidth=4
 
 
+set clipboard=unnamed,autoselect
 " タグファイルの指定
 set tags=~/.tags
 " スワップファイルは使わない
