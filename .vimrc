@@ -1,3 +1,19 @@
+
+
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible    " Use Vim defaults instead of 100% vi compatibility
+set backspace=2     " more powerful backspacing
+" 一旦ファイルタイプ関連を無効化する
+filetype off
+
+""""""""""""""""""""""""""""""
+" プラグインのセットアップ
+""""""""""""""""""""""""""""""
+
 let $VIMBUNDLE = '~/.vim/bundle'
 let $NEOBUNDLEPATH = $VIMBUNDLE . '/neobundle.vim'
 if stridx(&runtimepath, $NEOBUNDLEPATH) != -1
@@ -47,20 +63,6 @@ autocmd! VimEnter * redraw
             \ | echohl None
 endif
 
-
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
-
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible    " Use Vim defaults instead of 100% vi compatibility
-set backspace=2     " more powerful backspacing
-" 一旦ファイルタイプ関連を無効化する
-filetype off
-
-""""""""""""""""""""""""""""""
-" プラグインのセットアップ
-""""""""""""""""""""""""""""""
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
