@@ -1,68 +1,12 @@
 
 
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
 
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible    " Use Vim defaults instead of 100% vi compatibility
-set backspace=2     " more powerful backspacing
 " 一旦ファイルタイプ関連を無効化する
 filetype off
 
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
-
-let $VIMBUNDLE = '~/.vim/bundle'
-let $NEOBUNDLEPATH = $VIMBUNDLE . '/neobundle.vim'
-if stridx(&runtimepath, $NEOBUNDLEPATH) != -1
-" If the NeoBundle doesn't exist.
-command! NeoBundleInit try | call s:neobundle_init()
-            \| catch /^neobundleinit:/
-                \|   echohl ErrorMsg
-                \|   echomsg v:exception
-                \|   echohl None
-                \| endtry
-
-function! s:neobundle_init()
-    redraw | echo "Installing neobundle.vim..."
-    if !isdirectory($VIMBUNDLE)
-        call mkdir($VIMBUNDLE, 'p')
-        echo printf("Creating '%s'.", $VIMBUNDLE)
-    endif
-    cd $VIMBUNDLE
-
-    if executable('git')
-        call system('git clone git://github.com/Shougo/neobundle.vim')
-        if v:shell_error
-            throw 'neobundleinit: Git error.'
-        endif
-    endif
-
-    set runtimepath& runtimepath+=$NEOBUNDLEPATH
-    call neobundle#rc($VIMBUNDLE)
-    try
-        echo printf("Reloading '%s'", $MYVIMRC)
-        source $MYVIMRC
-    catch
-        echohl ErrorMsg
-        echomsg 'neobundleinit: $MYVIMRC: could not source.'
-        echohl None
-        return 0
-    finally
-        echomsg 'Installed neobundle.vim'
-    endtry
-
-    echomsg 'Finish!'
-endfunction
-
-autocmd! VimEnter * redraw
-            \ | echohl WarningMsg
-            \ | echo "You should do ':NeoBundleInit' at first!"
-            \ | echohl None
-endif
-
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
@@ -71,14 +15,13 @@ if has('vim_starting')
 endif
 
 
-
-
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'jacoborus/tender.vim'
 
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
@@ -92,11 +35,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
-" シングルクオートとダブルクオートの入れ替え等
-NeoBundle 'tpope/vim-surround'
 
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
 " 行末の半角スペースを可視化
@@ -115,7 +54,7 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak',
   \    },
   \ }
-
+NeoBundle 'Shougo/vimshell.vim'
 "強力な補完機能
 if has('lua')
   NeoBundleLazy 'Shougo/neocomplete.vim', {
@@ -272,7 +211,6 @@ NeoBundle 'moll/vim-node'
 NeoBundle 'pangloss/vim-javascript'
 
 
-
 call neobundle#end()
 " Required:
 filetype plugin indent on
@@ -282,6 +220,9 @@ filetype plugin indent on
 NeoBundleCheck
 """"""""""""""""""""""""""""""
 
+
+set backspace=2
+set modelines=0		" CVE-2007-2438
 "新しい行のインデントを現在行と同じにする
 set autoindent
 
@@ -347,25 +288,35 @@ set showmatch
 set smartindent
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+
+
 " 構文毎に文字色を変化させる
 syntax on:
 
-" カラースキーマの指定
-colorscheme molokai
 
-set t_Co=256
+"行を強調表示
+set cursorline
 
 set timeout timeoutlen=200 ttimeoutlen=75
-"Mac ClipBoard
-vmap <silent> sy :!pbcopy; pbpaste<CR>
-map <silent> sp <esc>o<esc>v :!pbpaste<CR>
 
+
+"行番号の色
+autocmd ColorScheme * highlight LineNr ctermfg=247
+" カラースキーマの指定
+"colorscheme molokai
+colorscheme tender
+
+"エリアス設定
+:command Tr NERDTree
+:command Vsh VimShell
+nnoremap <silent><C-e> :NERDTree<CR>
+nnoremap <silent><S-q> :q<CR>
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-"let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
@@ -505,3 +456,6 @@ let g:indent_guides_start_level = 2
 
 
 filetype on
+
+
+

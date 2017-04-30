@@ -1,0 +1,6 @@
+alias ls='ls -G'
+alias ll='ls -lG'
+alias la='ls -laG'
+alias hs="history | grep $@ "
+alias quicklook = ‘qlmanage -p $$args’ alias l = quicklook
+
