@@ -44,5 +44,8 @@ PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 
 #補完
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+    if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+    else
+      . $(brew --prefix)/etc/bash_completion
+    fi
 fi
