@@ -219,7 +219,9 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 """"""""""""""""""""""""""""""
-
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 
 set backspace=2
 set modelines=0		" CVE-2007-2438
