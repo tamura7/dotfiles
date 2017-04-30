@@ -42,10 +42,20 @@ google(){
 # プロンプトの設定
 PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 
-#補完
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    else
+##補完
+
+if [ "$(uname)" == 'Darwin' ]; then
+	#mac
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
     fi
+	:
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+	#linux
+	:
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+	#cygwin
+	:
+else
+	:
 fi
