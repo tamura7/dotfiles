@@ -33,8 +33,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
-" コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
 
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
@@ -210,6 +208,8 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'moll/vim-node'
 NeoBundle 'pangloss/vim-javascript'
 
+" コメントON/OFFを手軽に実行
+NeoBundle 'tomtom/tcomment_vim'
 
 call neobundle#end()
 " Required:
@@ -222,6 +222,8 @@ NeoBundleCheck
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
+
+set undofile
 
 set backspace=2
 set modelines=0		" CVE-2007-2438
@@ -291,7 +293,7 @@ set smartindent
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
-
+autocmd FileType text setlocal textwidth=0
 " 構文毎に文字色を変化させる
 syntax on:
 
