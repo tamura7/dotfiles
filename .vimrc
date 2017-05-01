@@ -315,7 +315,7 @@ colorscheme tender
 :command Vsh VimShell
 nnoremap <silent><C-e> :NERDTree<CR>
 nnoremap <silent><S-q> :q<CR>
-nnoremap <silent><C-t> :sp<CR><C-W><C-W>:VimShell<CR>
+nnoremap <silent><C-t><C-t> :sp<CR><C-W><C-W>:VimShell<CR>
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
