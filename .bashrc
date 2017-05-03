@@ -2,6 +2,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 alias hs="history | grep $@ "
+alias ssh="~/.ssh-theme"
 shopt -s autocd
 
 #suffix alias
@@ -18,40 +19,24 @@ command_not_found_handle () {
   return 127
 }
 
-# --------------------------------------
-# Google search from terminal
-# --------------------------------------
-google(){
-    if [ $(echo $1 | egrep "^-[cfs]$") ]; then
-        local opt="$1"
-        shift
-    fi
-    local url="https://www.google.co.jp/search?q=${*// /+}"
-    local app="/Applications"
-    local g="${app}/Google Chrome.app"
-    local f="${app}/Firefox.app"
-    local s="${app}/Safari.app"
-    case ${opt} in
-        "-g")   open "${url}" -a "$g";;
-        "-f")   open "${url}" -a "$f";;
-        "-s")   open "${url}" -a "$s";;
-        *)      open "${url}";;
-    esac
-}
-
 # プロンプトの設定
 PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 
-##補完
-
+ 
 if [ "$(uname)" == 'Darwin' ]; then
 	#mac
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
     fi
+    if [ -L ${HOME}/.Trash_b ]; then
+        alias rm='gmv --backup=numbered --target-directory=${HOME}/.Trash_b'
+    fi 
 	:
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
 	#linux
+    if [ -L ${HOME}/.Trash_b ]; then
+        alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash_b'
+    fi 
 	:
 elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
 	#cygwin

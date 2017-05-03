@@ -34,6 +34,12 @@ NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
+"括弧を自動的に閉じる
+NeoBundle 'Townk/vim-autoclose'
+
+NeoBundle "kana/vim-smartinput"
+NeoBundle "cohama/vim-smartinput-endwise"
+
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
 " 行末の半角スペースを可視化
@@ -86,42 +92,6 @@ let g:yankround_max_history = 100
 nnoremap <Leader><C-p> :<C-u>Unite yankround<CR>
 "}}}
 
-"ファイルビューア
-NeoBundleLazy 'Shougo/vimfiler', {
-  \ 'depends' : ["Shougo/unite.vim"],
-  \ 'autoload' : {
-  \   'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer", "VimFilerBufferDir" ],
-  \   'mappings' : ['<Plug>(vimfiler_switch)'],
-  \   'explorer' : 1,
-  \ }}
-
-
-" vimfiler {{{
-let g:vimfiler_as_default_explorer  = 1
-let g:vimfiler_safe_mode_by_default = 0
-let g:vimfiler_data_directory       = expand('~/.vim/etc/vimfiler')
-nnoremap <silent><C-u><C-j> :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit -toggle<CR>
-" }}}
-
-"括弧を自動的に閉じる
-NeoBundle 'Townk/vim-autoclose'
-
-NeoBundle "kana/vim-smartinput"
-NeoBundle "cohama/vim-smartinput-endwise"
-
-
-"メモリスト
-NeoBundle 'glidenote/memolist.vim'
-
-" memolist {{{
-let g:memolist_path = expand('~/GoogleDrive/memolist')
-let g:memolist_gfixgrep = 1
-let g:memolist_unite = 1
-let g:memolist_unite_option = "-vertical -start-insert"
-nnoremap mn  :MemoNew<CR>
-nnoremap ml  :MemoList<CR>
-nnoremap mg  :MemoGrep<CR>
-" }}}
 
 "超高速で簡単な移動
 NeoBundle 'Lokaltog/vim-easymotion'

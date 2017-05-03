@@ -3,7 +3,6 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-alias ssh="~/.ssh-theme"
 
 # 環境変数の設定
 # パス
