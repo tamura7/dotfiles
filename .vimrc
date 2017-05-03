@@ -192,8 +192,9 @@ NeoBundleCheck
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
-
+"undo情報保持
 set undofile
+set undodir=~/.undo
 
 set backspace=2
 set modelines=0		" CVE-2007-2438
