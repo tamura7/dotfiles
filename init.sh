@@ -1,6 +1,14 @@
 #!/bin/bash
 
 
+if [ ! -e .undo ]; then
+    mkdir .undo
+fi
+
+if [ ! -e .Trash_b ]; then
+    mkdir .Trash_b
+fi
+
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
@@ -20,9 +28,6 @@ done
 if [ ! -e .vim/bundle ]; then
     mkdir .vim/bundle
     git clone https://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
-fi
-if [ ! -e .undo ]; then
-    mkdir .undo
 fi
 if [ ! -e $HOME/.vimbackup ]; then
     mkdir $HOME/.vimbackup
