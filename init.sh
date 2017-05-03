@@ -17,8 +17,13 @@ do
 done
 
 
-if [ ! -e bundle ]; then
-    mkdir bundle
-    mkdir $HOME/.vimbackup
+if [ ! -e .vim/bundle ]; then
+    mkdir .vim/bundle
     git clone https://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
+fi
+if [ ! -e .undo ]; then
+    mkdir .undo
+fi
+if [ ! -e $HOME/.vimbackup ]; then
+    mkdir $HOME/.vimbackup
 fi
