@@ -85,7 +85,7 @@ NeoBundle 'LeafCage/yankround.vim'
 
 
 "超高速で簡単な移動
-NeoBundle 'Lokaltog/vim-easymotion'
+" NeoBundle 'Lokaltog/vim-easymotion'
 
 "シンタックス
 NeoBundle 'rcmdnk/vim-markdown'
@@ -94,8 +94,8 @@ let g:vim_markdown_folding_disabled = 1
 " }}}
 
 "カーソル移動機能を拡張
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-scripts/matchit.zip'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'vim-scripts/matchit.zip'
 
 "単語を調べる
 NeoBundle 'tyru/open-browser.vim'
@@ -277,7 +277,7 @@ nnoremap <Leader>w :w<CR>
 
 
 "カーソル行ハイライト
-nnoremap <silent>zz "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
 nmap <Leader>h zz:%s/<C-r>///g<Left><Left>
@@ -288,7 +288,7 @@ nmap <Leader>f :/<C-r>/
 
 
 "ハイライト消去
-nnoremap <silent> <C-@> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <Leader><esc> :<C-u>nohlsearch<CR><C-l>
 
 nnoremap x "_x
 nnoremap s "_s
@@ -303,22 +303,22 @@ nnoremap <Leader><C-p> :<C-u>Unite yankround<CR>
 "}}}
 
 
-" vim-easymotion {{{
-let g:EasyMotion_do_mapping = 0
-nmap s <Plug>(easymotion-s2)
-xmap s <Plug>(easymotion-s2)
-omap z <Plug>(easymotion-s2)
-nmap g/ <Plug>(easymotion-sn)
-xmap g/ <Plug>(easymotion-sn)
-omap g/ <Plug>(easymotion-tn)
-let g:EasyMotion_smartcase = 1
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-let g:EasyMotion_startofline = 0
-let g:EasyMotion_keys = 'QZASDFGHJKL;'
-let g:EasyMotion_use_upper = 1
-let g:EasyMotion_enter_jump_first = 1
-" }}}
+" " vim-easymotion {{{
+" let g:EasyMotion_do_mapping = 0
+" nmap s <Plug>(easymotion-s2)
+" xmap s <Plug>(easymotion-s2)
+" omap z <Plug>(easymotion-s2)
+" nmap g/ <Plug>(easymotion-sn)
+" xmap g/ <Plug>(easymotion-sn)
+" omap g/ <Plug>(easymotion-tn)
+" let g:EasyMotion_smartcase = 1
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" let g:EasyMotion_startofline = 0
+" let g:EasyMotion_keys = 'QZASDFGHJKL;'
+" let g:EasyMotion_use_upper = 1
+" let g:EasyMotion_enter_jump_first = 1
+" " }}}
 
 
 
