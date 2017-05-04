@@ -290,6 +290,10 @@ nmap <Leader>f :/<C-r>/
 "ハイライト消去
 nnoremap <silent> <Leader><esc> :<C-u>nohlsearch<CR><C-l>
 
+"差分
+command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
+:command Df DiffOrig
+
 nnoremap x "_x
 nnoremap s "_s
 
