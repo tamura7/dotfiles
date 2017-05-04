@@ -1,9 +1,8 @@
 if 1
 
-
 " 一旦ファイルタイプ関連を無効化する
 filetype off
-
+let mapleader = "\<Space>"
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
@@ -82,6 +81,7 @@ let g:neocomplete#lock_buffer_name_pattern        = '\*ku\*'
 
 "ヤンク履歴を保持
 NeoBundle 'LeafCage/yankround.vim'
+
 
 " yankround.vim {{{
 nmap p <Plug>(yankround-p)
@@ -196,6 +196,8 @@ set fileformats=unix,dos,mac
 set undofile
 set undodir=~/.undo
 
+set nowrap 
+
 set backspace=2
 set modelines=0		" CVE-2007-2438
 "新しい行のインデントを現在行と同じにする
@@ -217,7 +219,7 @@ set expandtab
 set shiftwidth=4
 
 
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 " タグファイルの指定
 set tags=~/.tags
 " スワップファイルは使わない
@@ -281,12 +283,29 @@ autocmd ColorScheme * highlight LineNr ctermfg=247
 "colorscheme molokai
 colorscheme tender
 
-"エリアス設定
 :command Tr NERDTree
 :command Vsh VimShell
-nnoremap <silent><C-e> :NERDTree<CR>
-nnoremap <silent><S-q> :q<CR>
-nnoremap <silent><C-x> :sp<CR><C-W><C-W>:VimShell<CR>
+"キーマップ設定
+
+nnoremap <silent><Leader>t :NERDTree<CR>
+nnoremap <silent><Leader>q :q<CR>
+nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
+
+"保存
+nnoremap <Leader>w :w<CR>
+
+"カーソル行ハイライト
+nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+
+"カーソル下の単語をハイライトしてから置換
+nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+
+nnoremap x "_x
+nnoremap s "_s
+
+"保存前と比較
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
@@ -429,9 +448,17 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=235
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
-
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
 filetype on
-
 
 endif
