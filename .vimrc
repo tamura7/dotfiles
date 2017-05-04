@@ -83,34 +83,9 @@ let g:neocomplete#lock_buffer_name_pattern        = '\*ku\*'
 NeoBundle 'LeafCage/yankround.vim'
 
 
-" yankround.vim {{{
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-let g:yankround_max_history = 100
-nnoremap <Leader><C-p> :<C-u>Unite yankround<CR>
-"}}}
-
 
 "超高速で簡単な移動
 NeoBundle 'Lokaltog/vim-easymotion'
-" vim-easymotion {{{
-let g:EasyMotion_do_mapping = 0
-nmap s <Plug>(easymotion-s2)
-xmap s <Plug>(easymotion-s2)
-omap z <Plug>(easymotion-s2)
-nmap g/ <Plug>(easymotion-sn)
-xmap g/ <Plug>(easymotion-sn)
-omap g/ <Plug>(easymotion-tn)
-let g:EasyMotion_smartcase = 1
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-let g:EasyMotion_startofline = 0
-let g:EasyMotion_keys = 'QZASDFGHJKL;'
-let g:EasyMotion_use_upper = 1
-let g:EasyMotion_enter_jump_first = 1
-" }}}
 
 "シンタックス
 NeoBundle 'rcmdnk/vim-markdown'
@@ -219,6 +194,10 @@ set expandtab
 set shiftwidth=4
 
 
+set ignorecase
+set smartcase
+
+"クリップボードコピーを有効
 set clipboard=unnamed
 " タグファイルの指定
 set tags=~/.tags
@@ -279,6 +258,7 @@ set timeout timeoutlen=200 ttimeoutlen=75
 
 "行番号の色
 autocmd ColorScheme * highlight LineNr ctermfg=247
+
 " カラースキーマの指定
 "colorscheme molokai
 colorscheme tender
@@ -290,21 +270,57 @@ colorscheme tender
 nnoremap <silent><Leader>t :NERDTree<CR>
 nnoremap <silent><Leader>q :q<CR>
 nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
+nnoremap <silent><Leader>@ viwy
 
 "保存
 nnoremap <Leader>w :w<CR>
 
+
 "カーソル行ハイライト
-nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+nnoremap <silent>zz "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
-nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+nmap <Leader>h zz:%s/<C-r>///g<Left><Left>
+
+
+"カーソル下の単語をハイライトしてから検索
+nmap <Leader>f :/<C-r>/
+
+
+"ハイライト消去
+nnoremap <silent> <C-@> :<C-u>nohlsearch<CR><C-l>
 
 nnoremap x "_x
 nnoremap s "_s
 
-"保存前と比較
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+" yankround.vim {{{
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+let g:yankround_max_history = 100
+nnoremap <Leader><C-p> :<C-u>Unite yankround<CR>
+"}}}
+
+
+" vim-easymotion {{{
+let g:EasyMotion_do_mapping = 0
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+nmap g/ <Plug>(easymotion-sn)
+xmap g/ <Plug>(easymotion-sn)
+omap g/ <Plug>(easymotion-tn)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+let g:EasyMotion_startofline = 0
+let g:EasyMotion_keys = 'QZASDFGHJKL;'
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_enter_jump_first = 1
+" }}}
+
+
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
