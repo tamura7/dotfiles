@@ -82,7 +82,8 @@ let g:neocomplete#lock_buffer_name_pattern        = '\*ku\*'
 "ヤンク履歴を保持
 NeoBundle 'LeafCage/yankround.vim'
 
-
+" 編集履歴管理
+NeoBundle "sjl/gundo.vim"
 
 "超高速で簡単な移動
 " NeoBundle 'Lokaltog/vim-easymotion'
@@ -265,6 +266,7 @@ colorscheme tender
 
 :command Tr NERDTree
 :command Vsh VimShell
+:command Gu GundoToggle
 "キーマップ設定
 
 nnoremap <silent><Leader>t :NERDTree<CR>
@@ -280,19 +282,28 @@ nnoremap <Leader>w :w<CR>
 nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
-nmap <Leader>h zz:%s/<C-r>///g<Left><Left>
+nmap <Leader>h <Space><Space>:%s/<C-r>///g<Left><Left>
 
 
 "カーソル下の単語をハイライトしてから検索
 nmap <Leader>f :/<C-r>/
 
-
 "ハイライト消去
 nnoremap <silent> <Leader><esc> :<C-u>nohlsearch<CR><C-l>
 
-"差分
-command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
-:command Df DiffOrig
+nnoremap <silent> cy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> cc   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+vnoremap <silent> cc   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+
+noremap <S-h>   ^
+noremap <S-j>   }
+noremap <S-k>   {
+noremap <S-l>   $
+nnoremap <CR> i<CR><ESC>
+
+map <C-A> <S-g>$vgg
+map! <C-A> <Esc><S-g>$vggi
+
 
 nnoremap x "_x
 nnoremap s "_s
@@ -303,9 +314,13 @@ nmap P <Plug>(yankround-P)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 let g:yankround_max_history = 100
-nnoremap <Leader><C-p> :<C-u>Unite yankround<CR>
+nnoremap <Leader>y :<C-u>Unite yankround<CR>
 "}}}
 
+
+"差分
+command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
+:command Df DiffOrig
 
 " " vim-easymotion {{{
 " let g:EasyMotion_do_mapping = 0
@@ -350,8 +365,6 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-L> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
 noremap <C-N> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
@@ -361,6 +374,29 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+
+:command Uc UniteWithBufferDir -buffer-name=files file file/new
+" レジスタ一覧
+:command Ur Unite register
+" グレップ検索
+nnoremap <silent><Leader>g :<C-u>UniteWithCursorWord grep -buffer-name=grep-search -no-quit -no-wrap<CR>
+" グレップ検索
+:command Ug Unite grep -buffer-name=grep-search -no-quit -no-wrap
+" すべてのソースを表示
+:command Us :Unite source
+" アウトラインを展開
+:command Uo Unite outline -vertical -winwidth=50 -buffer-name=outline -no-focus -no-start-insert -no-quit
+"シンタックスエラーを表示
+:command Ue Unite location_list
+"ファイル検索  
+let g:unite_source_find_default_expr="-iname "
+nnoremap <silent>uf :<C-u>Unite find<CR>
+nnoremap <silent>FF :<C-u>Unite find<CR> 
+:command Uf Unite find
+:command Ufa Unite find:. -buffer-name=serch-file -no-quit
+
+
 """"""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""
@@ -404,7 +440,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " For snippet_complete marker.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+set conceallevel=2 concealcursor=i
 endif
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
@@ -414,26 +450,26 @@ endif
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=gray gui=none ctermfg=darkred ctermbg=white cterm=none'
 
 if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
+augroup InsertHook
+autocmd!
+autocmd InsertEnter * call s:StatusLine('Enter')
+autocmd InsertLeave * call s:StatusLine('Leave')
+augroup END
 endif
 
 let s:slhlcmd = ''
 function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
+if a:mode == 'Enter'
+silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+silent exec g:hi_insert
+else
+highlight clear StatusLine
+silent exec s:slhlcmd
+endif
 endfunction
 
 function! s:GetHighlight(hi)
-  redir => hl
+redir => hl
   exec 'highlight '.a:hi
   redir END
   let hl = substitute(hl, '[\r\n]', '', 'g')
