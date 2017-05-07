@@ -28,6 +28,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
 
@@ -256,7 +257,6 @@ set cursorline
 
 set timeout timeoutlen=200 ttimeoutlen=75
 
-
 "行番号の色
 autocmd ColorScheme * highlight LineNr ctermfg=247
 
@@ -267,12 +267,22 @@ colorscheme tender
 :command Tr NERDTree
 :command Vsh VimShell
 :command Gu GundoToggle
+"差分
+command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
+:command Df DiffOrig
 "キーマップ設定
 
-nnoremap <silent><Leader>t :NERDTree<CR>
-nnoremap <silent><Leader>q :q<CR>
+nnoremap <silent><C-e> :NERDTree<CR>
+nnoremap <silent><Leader>q :bdelete<CR>
 nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
 nnoremap <silent><Leader>@ viwy
+
+nnoremap <silent>f<left> :bp<CR>
+nnoremap <silent>f<right> :bn<CR>
+nnoremap <silent>q<right> <C-w>l
+nnoremap <silent>q<left> <C-w>h
+nnoremap <silent>q<up> <C-w>k
+nnoremap <silent>q<down> <C-w>j
 
 "保存
 nnoremap <Leader>w :w<CR>
@@ -311,16 +321,13 @@ nnoremap s "_s
 " yankround.vim {{{
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+nmap <S-p> <Plug>(yankround-prev)
+nmap <S-n> <Plug>(yankround-next)
 let g:yankround_max_history = 100
 nnoremap <Leader>y :<C-u>Unite yankround<CR>
 "}}}
 
 
-"差分
-command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
-:command Df DiffOrig
 
 " " vim-easymotion {{{
 " let g:EasyMotion_do_mapping = 0
@@ -365,6 +372,8 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-L> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
 noremap <C-N> :Unite file_mru<CR>
+" タブ一覧
+noremap <C-T> :Unite tab<CR>
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
@@ -391,17 +400,31 @@ nnoremap <silent><Leader>g :<C-u>UniteWithCursorWord grep -buffer-name=grep-sear
 :command Ue Unite location_list
 "ファイル検索  
 let g:unite_source_find_default_expr="-iname "
-nnoremap <silent>uf :<C-u>Unite find<CR>
 nnoremap <silent>FF :<C-u>Unite find<CR> 
 :command Uf Unite find
 :command Ufa Unite find:. -buffer-name=serch-file -no-quit
 
 
+" ブックマークを最初から表示
+let g:NERDTreeShowBookmarks=1
+
+" ファイル指定で開かれた場合はNERDTreeは表示しない
+if !argc()
+    autocmd vimenter * NERDTree|normal gg3j
+endif
+" 隠しファイルを表示する
+let NERDTreeShowHidden = 1
+
+" デフォルトでツリーを表示させる
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_new_tab=1
+" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 """"""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""
 
-call smartinput_endwise#define_default_rules()
+"call smartinput_endwise#define_default_rules()
 
 "-------------------------------------------------
 """ neocomplcache設定
