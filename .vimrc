@@ -22,13 +22,32 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'jacoborus/tender.vim'
 
-" ファイルオープンを便利に
+" " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
+" " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
+"ファイルビューア
+NeoBundleLazy 'Shougo/vimfiler', {
+  \ 'depends' : ["Shougo/unite.vim"],
+  \ 'autoload' : {
+  \   'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer", "VimFilerBufferDir" ],
+  \   'mappings' : ['<Plug>(vimfiler_switch)'],
+  \   'explorer' : 1,
+  \ }}
+
+
+" vimfiler {{{
+let g:vimfiler_as_default_explorer  = 1
+let g:vimfiler_safe_mode_by_default = 0
+let g:vimfiler_data_directory       = expand('~/.vim/etc/vimfiler')
+nnoremap <silent><C-u><C-j> :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit -toggle<CR>
+" }}}
+
+
+
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
 
@@ -269,25 +288,27 @@ colorscheme tender
 :command Tr NERDTree
 :command Vsh VimShell
 :command Gu GundoToggle
+:command Vf VimFilerExplore
 "差分
 command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
 :command Df DiffOrig
 "キーマップ設定
 
 nnoremap <silent><C-e> :NERDTree<CR>
-nnoremap <silent><Leader>q :bdelete<CR>
+ 
+nnoremap <silent><leader>q :bp<cr>:bd #<cr>
 nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
 nnoremap <silent><Leader>@ viwy
 
-nnoremap <silent>f<left> :bp<CR>
-nnoremap <silent>f<right> :bn<CR>
-nnoremap <silent>q<right> <C-w>l
-nnoremap <silent>q<left> <C-w>h
-nnoremap <silent>q<up> <C-w>k
-nnoremap <silent>q<down> <C-w>j
+noremap <silent>f<left> :bp<CR>
+noremap <silent>f<right> :bn<CR>
+noremap <silent>q<right> <C-w>l
+noremap <silent>q<left> <C-w>h
+noremap <silent>q<up> <C-w>k
+noremap <silent>q<down> <C-w>j
 
 "保存
-nnoremap <Leader>w :w<CR>
+noremap <Leader>w :w<CR>
 
 
 "カーソル行ハイライト
@@ -311,13 +332,12 @@ noremap <S-h>   ^
 noremap <S-j>   }
 noremap <S-k>   {
 noremap <S-l>   $
-nnoremap <CR> i<CR><ESC>
 
 map <C-A> <S-g>$vgg
 map! <C-A> <Esc><S-g>$vggi
 
 
-nnoremap x "_x
+noremap x "_x
 nnoremap s "_s
 
 " yankround.vim {{{
@@ -328,7 +348,6 @@ nmap <S-n> <Plug>(yankround-next)
 let g:yankround_max_history = 100
 nnoremap <Leader>y :<C-u>Unite yankround<CR>
 "}}}
-
 
 
 " " vim-easymotion {{{
@@ -414,13 +433,13 @@ let g:NERDTreeShowBookmarks=1
 let NERDTreeShowHidden = 1
 
 " デフォルトでツリーを表示させる
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " ファイル指定で開かれた場合はNERDTreeは表示しない
 if !argc()
-    autocmd vimenter * NERDTree|normal gg3j
+    " autocmd vimenter * NERDTree|normal gg3j
 endif
 """"""""""""""""""""""""""""""
 
@@ -528,6 +547,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=235
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
+
+
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
