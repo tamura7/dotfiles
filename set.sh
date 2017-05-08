@@ -1,5 +1,5 @@
-if [ ! -e .vim/bundle/vimproc.vim ]; then
-    mkdir .vim/bundle/vimproc.vim
+if [ ! -e .vim/bundle/vimproc ]; then
+    mkdir .vim/bundle/vimproc
 fi    
-cd ~/.vim/bundle/vimproc.vim
+cd ~/.vim/bundle/vimproc
 make
