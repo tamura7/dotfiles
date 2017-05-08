@@ -254,6 +254,8 @@ syntax on:
 
 "行を強調表示
 set cursorline
+set lazyredraw
+set ttyfast
 
 set timeout timeoutlen=200 ttimeoutlen=75
 
@@ -408,10 +410,6 @@ nnoremap <silent>FF :<C-u>Unite find<CR>
 " ブックマークを最初から表示
 let g:NERDTreeShowBookmarks=1
 
-" ファイル指定で開かれた場合はNERDTreeは表示しない
-if !argc()
-    autocmd vimenter * NERDTree|normal gg3j
-endif
 " 隠しファイルを表示する
 let NERDTreeShowHidden = 1
 
@@ -420,6 +418,10 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" ファイル指定で開かれた場合はNERDTreeは表示しない
+if !argc()
+    autocmd vimenter * NERDTree|normal gg3j
+endif
 """"""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""
