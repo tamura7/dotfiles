@@ -20,9 +20,9 @@ command_not_found_handle () {
 }
 
 # プロンプトの設定
-PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
+PS1='[\h]\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 
- 
+
 if [ "$(uname)" == 'Darwin' ]; then
 	#mac
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
