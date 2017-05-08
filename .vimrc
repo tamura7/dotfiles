@@ -1,4 +1,4 @@
-if 1
+if 0 | endif
 
 " 一旦ファイルタイプ関連を無効化する
 filetype off
@@ -540,4 +540,3 @@ vmap <silent> <expr> p <sid>Repl()
 
 filetype on
 
-endif
