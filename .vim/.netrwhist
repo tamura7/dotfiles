@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='scp://ls-al//var/www/html/dev.ls-al.info/admin/src/Controller/'
+let g:netrw_dirhist_2='scp://ls-al//var/www/html/dev.ls-al.info/'
+let g:netrw_dirhist_3='scp://ls-al//var/www/html/dev.ls-al.info/admin/'
+let g:netrw_dirhist_4='scp://ls-al//var/www/html/dev.ls-al.info/admin/src/'
+let g:netrw_dirhist_5='scp://ls-al//var/www/html/dev.ls-al.info/admin/src/Template/'
+let g:netrw_dirhist_6='scp://ls-al//var/www/html/dev.ls-al.info/admin/src/Template/Master/'

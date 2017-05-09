@@ -289,7 +289,7 @@ colorscheme tender
 :command Tr NERDTree
 :command Vsh VimShell
 :command Gu GundoToggle
-:command Vf VimFilerExplore
+:command -nargs=* Vf VimFilerExplor <args>
 "差分
 command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
 :command Df DiffOrig
