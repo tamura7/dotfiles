@@ -27,8 +27,8 @@ NeoBundle 'Shougo/unite.vim'
 " " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+" NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'jistr/vim-nerdtree-tabs'
 "ファイルビューア
 NeoBundleLazy 'Shougo/vimfiler', {
   \ 'depends' : ["Shougo/unite.vim"],
@@ -43,10 +43,11 @@ NeoBundleLazy 'Shougo/vimfiler', {
 let g:vimfiler_as_default_explorer  = 1
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_data_directory       = expand('~/.vim/etc/vimfiler')
-nnoremap <silent><C-u><C-j> :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit -toggle<CR>
+nnoremap <silent><C-u><C-j> :<C-u>VimFilerBufferDir -split -simple -winwidth=10 -no-quit -toggle<CR>
 " }}}
-
-
+autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
+autocmd FileType vimfiler nmap <buffer> ll <Plug>(vimfiler_cd_or_edit)
+NeoBundle 'Shougo/unite-ssh'
 
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
@@ -253,9 +254,9 @@ set incsearch
 " 保存されていないファイルがあるときでも別のファイルを開けるようにする
 set hidden
 
-"set list
-" インデント
-" タブと行の続きを可視化する
+"不可視文字の表示
+set list
+set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
 " 行番号を表示する
 set number
 " 対応する括弧やブレースを表示する
@@ -294,22 +295,41 @@ command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p 
 :command Df DiffOrig
 "キーマップ設定
 
-nnoremap <silent><C-e> :NERDTree<CR>
+nnoremap <silent><C-e> :VimFilerExplor  -winwidth=35<CR>
  
 nnoremap <silent><leader>q :bp<cr>:bd #<cr>
 nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
 nnoremap <silent><Leader>@ viwy
 
+"バッファ切り替え
 noremap <silent>f<left> :bp<CR>
 noremap <silent>f<right> :bn<CR>
-noremap <silent>q<right> <C-w>l
-noremap <silent>q<left> <C-w>h
-noremap <silent>q<up> <C-w>k
-noremap <silent>q<down> <C-w>j
+
+"分割ウィンドウ内の移動
+noremap <silent>z<right> <C-w>l
+noremap <silent>z<left> <C-w>h
+noremap <silent>z<up> <C-w>k
+noremap <silent>z<down> <C-w>j
+
+"ノーマルモードへ
+inoremap jj  <Esc>
+
+" vを二回で行末まで選択
+vnoremap v $h
+
+" w!! でスーパーユーザーとして保存（sudoが使える環境限定）
+cmap w!! w !sudo tee > /dev/null %
 
 "保存
 noremap <Leader>w :w<CR>
 
+" T + ? で各種設定をトグル
+nnoremap [toggle] <Nop>
+nmap T [toggle]
+nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
+nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
+nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
+nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
 
 "カーソル行ハイライト
 nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
@@ -339,6 +359,9 @@ map! <C-A> <Esc><S-g>$vggi
 
 noremap x "_x
 nnoremap s "_s
+
+" Netrw
+let b:netrw_islocal=0
 
 " yankround.vim {{{
 nmap p <Plug>(yankround-p)

@@ -21,7 +21,7 @@ command_not_found_handle () {
 
 # プロンプトの設定
 PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
-
+PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME} \007"'
 
 if [ "$(uname)" == 'Darwin' ]; then
 	#mac

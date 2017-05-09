@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/tamuraakihiro/htdocs/online-education/admin/src'
-let g:netrw_dirhist_2='/Users/tamuraakihiro/htdocs/online-education/admin/src/Template'
-let g:netrw_dirhist_3='/Users/tamuraakihiro/htdocs/online-education/admin/src/Template/Element'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/tamuraakihiro'
+let g:netrw_dirhist_2='/Users/tamuraakihiro/Pictures'
+let g:netrw_dirhist_3='/Users/tamuraakihiro'
+let g:netrw_dirhist_4='/Users/tamuraakihiro/Public'
+let g:netrw_dirhist_5='/Users/tamuraakihiro'
+let g:netrw_dirhist_6='/Users/tamuraakihiro/Public'
+let g:netrw_dirhist_7='/Users/tamuraakihiro'

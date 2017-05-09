@@ -4,7 +4,7 @@ set_profile() {
 }
 
 if [[ "$@" == online_pg || "$@" == ls-al ]]; then
- set_profile "ssh"
+ set_profile "ssh \$\$HOST\$\$"
  ssh $@
  set_profile "Default"
 else
