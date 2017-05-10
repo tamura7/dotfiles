@@ -23,6 +23,9 @@ command_not_found_handle () {
 PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 #PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME} \007"'
 
+[[ -n "$VIMRUNTIME" ]] && \
+    PS1='(VIM) \W \t $ '
+
 if [ "$(uname)" == 'Darwin' ]; then
 	#mac
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
