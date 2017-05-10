@@ -42,6 +42,7 @@ NeoBundleLazy 'Shougo/vimfiler', {
 " vimfiler {{{
 let g:vimfiler_as_default_explorer  = 1
 let g:vimfiler_safe_mode_by_default = 0
+let g:unite_kind_file_use_trashbox = 1
 let g:vimfiler_data_directory       = expand('~/.vim/etc/vimfiler')
 nnoremap <silent><C-u><C-j> :<C-u>VimFilerBufferDir -split -simple -winwidth=10 -no-quit -toggle<CR>
 " }}}
