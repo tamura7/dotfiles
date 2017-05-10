@@ -360,6 +360,18 @@ map! <C-A> <Esc><S-g>$vggi
 noremap x "_x
 nnoremap s "_s
 
+"日本語対応
+"日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
+inoremap <silent> っj <ESC>
+
+
+
 " Netrw
 let b:netrw_islocal=0
 
