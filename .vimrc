@@ -286,13 +286,13 @@ autocmd ColorScheme * highlight LineNr ctermfg=247
 "colorscheme molokai
 colorscheme tender
 
-:command Tr NERDTree
-:command Vsh VimShell
-:command Gu GundoToggle
-:command -nargs=* Vf VimFilerExplor <args>
+:command! Tr NERDTree
+:command! Vsh VimShell
+:command! Gu GundoToggle
+:command! -nargs=* Vf VimFilerExplor <args>
 "差分
-command DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
-:command Df DiffOrig
+command! DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
+:command! Df DiffOrig
 "キーマップ設定
 
 nnoremap <silent><C-e> :VimFilerExplor  -winwidth=35<CR>
@@ -429,24 +429,25 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 
-:command Uc UniteWithBufferDir -buffer-name=files file file/new
+:command! Uc UniteWithBufferDir -buffer-name=files file file/new
 " レジスタ一覧
-:command Ur Unite register
+:command! Ur Unite register
 " グレップ検索
 nnoremap <silent><Leader>g :<C-u>UniteWithCursorWord grep -buffer-name=grep-search -no-quit -no-wrap<CR>
 " グレップ検索
-:command Ug Unite grep -buffer-name=grep-search -no-quit -no-wrap
+:command! Ug Unite grep -buffer-name=grep-search -no-quit -no-wrap
 " すべてのソースを表示
-:command Us :Unite source
+:command! Us :Unite source
 " アウトラインを展開
-:command Uo Unite outline -vertical -winwidth=50 -buffer-name=outline -no-focus -no-start-insert -no-quit
+:command! Uo Unite outline -vertical -winwidth=50 -buffer-name=outline -no-focus -no-start-insert -no-quit
 "シンタックスエラーを表示
-:command Ue Unite location_list
+:command! Ue Unite location_list
 "ファイル検索  
 let g:unite_source_find_default_expr="-iname "
-nnoremap <silent>FF :<C-u>Unite find<CR> 
-:command Uf Unite find
-:command Ufa Unite find:. -buffer-name=serch-file -no-quit
+let g:unite_source_find_default_opts = "*"
+nnoremap <silent>FF :<C-u>Unite find:. -buffer-name=serch-file -no-quit<CR>
+:command! Uf Unite find
+:command! Ufa Unite find:. -buffer-name=serch-file -no-quit
 
 
 " ブックマークを最初から表示
