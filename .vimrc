@@ -22,6 +22,13 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'jacoborus/tender.vim'
 
+
+" sessionを保存
+NeoBundle 'xolox/vim-session', {
+      \ 'depends' : 'xolox/vim-misc',
+  \ }
+
+
 " " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " " Unite.vimで最近使ったファイルを表示できるようにする
@@ -585,6 +592,23 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
 
+" 現在のディレクトリ直下の .vimsessions/ を取得 
+let s:local_session_directory = xolox#misc#path#merge(getcwd(), '.vimsessions')
+" 存在すれば
+if isdirectory(s:local_session_directory)
+  " session保存ディレクトリをそのディレクトリの設定
+  let g:session_directory = s:local_session_directory
+  " vimを辞める時に自動保存
+  let g:session_autosave = 'yes'
+  " 引数なしでvimを起動した時にsession保存ディレクトリのdefault.vimを開く
+  let g:session_autoload = 'yes'
+  " 1分間に1回自動保存
+  let g:session_autosave_periodic = 1
+else
+  let g:session_autosave = 'no'
+  let g:session_autoload = 'no'
+endif
+unlet s:local_session_directory
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
