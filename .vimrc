@@ -444,7 +444,6 @@ nnoremap <silent><Leader>g :<C-u>UniteWithCursorWord grep -buffer-name=grep-sear
 :command! Ue Unite location_list
 "ファイル検索  
 let g:unite_source_find_default_expr="-iname "
-let g:unite_source_find_default_opts = "*"
 nnoremap <silent>FF :<C-u>Unite find:. -buffer-name=serch-file -no-quit<CR>
 :command! Uf Unite find
 :command! Ufa Unite find:. -buffer-name=serch-file -no-quit
