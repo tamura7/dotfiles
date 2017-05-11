@@ -386,8 +386,8 @@ let b:netrw_islocal=0
 " yankround.vim {{{
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
-nmap <S-p> <Plug>(yankround-prev)
-nmap <S-n> <Plug>(yankround-next)
+nmap pp <Plug>(yankround-prev)
+nmap nn <Plug>(yankround-next)
 let g:yankround_max_history = 100
 nnoremap <Leader>y :<C-u>Unite yankround<CR>
 "}}}
@@ -421,7 +421,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
-
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
 " Unit.vimの設定
@@ -464,7 +463,7 @@ nnoremap <silent><Leader>g :<C-u>UniteWithCursorWord grep -buffer-name=grep-sear
 :command! Ue Unite location_list
 "ファイル検索  
 let g:unite_source_find_default_expr="-iname "
-nnoremap <silent>FF :<C-u>Unite find:. -buffer-name=serch-file -no-quit<CR>
+nnoremap <silent>FF :<C-u>Unite find:. -buffer-name=serch-file<CR>
 :command! Uf Unite find
 :command! Ufa Unite find:. -buffer-name=serch-file -no-quit
 
