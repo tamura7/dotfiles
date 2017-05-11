@@ -604,6 +604,7 @@ if isdirectory(s:local_session_directory)
   let g:session_autoload = 'yes'
   " 1分間に1回自動保存
   let g:session_autosave_periodic = 1
+  let g:session_autosave_silent = 1
 else
   let g:session_autosave = 'no'
   let g:session_autoload = 'no'
