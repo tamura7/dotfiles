@@ -132,13 +132,14 @@ NeoBundle 'tyru/open-browser.vim'
 
 " open-browser {{{
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
+nmap bb <Plug>(openbrowser-smart-search)
+vmap bb <Plug>(openbrowser-smart-search)
 " }}}
 
 NeoBundle 'rizzatti/dash.vim'
 
 " dash.vim {{{
-nmap <Leader>d <Plug>DashSearch
+nmap da <Plug>DashSearch
 " }}}
 
 "emmet
@@ -344,6 +345,7 @@ nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsear
 
 "カーソル下の単語をハイライトしてから置換
 nmap <Leader>h <Space><Space>:%s/<C-r>///g<Left><Left>
+nnoremap z<CR> i<CR><ESC>
 
 
 "カーソル下の単語をハイライトしてから検索
