@@ -29,7 +29,7 @@ NeoBundle 'xolox/vim-session', {
   \ }
 
 
-# Qfreplace 使用
+" Qfreplace 使用
 NeoBundle "thinca/vim-qfreplace"
 
 
@@ -217,7 +217,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
-# 外部grepに使うプログラム設定
+" 外部grepに使うプログラム設定
 set grepprg=ag\ -a
 
 set ignorecase
