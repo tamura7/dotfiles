@@ -309,6 +309,7 @@ nnoremap <silent><Leader>@ viwy
 "バッファ切り替え
 noremap <silent>f<left> :bp<CR>
 noremap <silent>f<right> :bn<CR>
+noremap <silent>f<up> <C-^>
 
 "分割ウィンドウ内の移動
 noremap <silent>z<right> <C-w>l
