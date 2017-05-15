@@ -29,6 +29,10 @@ NeoBundle 'xolox/vim-session', {
   \ }
 
 
+# Qfreplace 使用
+NeoBundle "thinca/vim-qfreplace"
+
+
 " " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " " Unite.vimで最近使ったファイルを表示できるようにする
@@ -130,17 +134,6 @@ let g:vim_markdown_folding_disabled = 1
 "単語を調べる
 NeoBundle 'tyru/open-browser.vim'
 
-" open-browser {{{
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap bb <Plug>(openbrowser-smart-search)
-vmap bb <Plug>(openbrowser-smart-search)
-" }}}
-
-NeoBundle 'rizzatti/dash.vim'
-
-" dash.vim {{{
-nmap da <Plug>DashSearch
-" }}}
 
 "emmet
 NeoBundleLazy 'mattn/emmet-vim', {
@@ -224,6 +217,8 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
+# 外部grepに使うプログラム設定
+set grepprg=ag\ -a
 
 set ignorecase
 set smartcase
