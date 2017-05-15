@@ -291,6 +291,7 @@ autocmd ColorScheme * highlight LineNr ctermfg=247
 colorscheme tender
 
 :command! Tr NERDTree
+:command! Qr Qfreplace
 :command! Vsh VimShell
 :command! Gu GundoToggle
 :command! -nargs=* Vf VimFilerExplor <args>
