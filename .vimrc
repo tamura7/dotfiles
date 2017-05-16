@@ -338,7 +338,7 @@ nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
 
 "カーソル行ハイライト
-nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+nnoremap <silent><Leader><Leader> "zyiw:let @/ =  @z <CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
 nmap <Leader>h <Space><Space>:%s/<C-r>///g<Left><Left>
