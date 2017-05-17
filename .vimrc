@@ -128,8 +128,8 @@ let g:vim_markdown_folding_disabled = 1
 " }}}
 
 "カーソル移動機能を拡張
-" NeoBundle 'tpope/vim-surround'
-" NeoBundle 'vim-scripts/matchit.zip'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-scripts/matchit.zip'
 
 "単語を調べる
 NeoBundle 'tyru/open-browser.vim'
