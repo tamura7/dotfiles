@@ -143,7 +143,7 @@ NeoBundleLazy 'mattn/emmet-vim', {
   \ }}
 " emmet {{{
 let g:use_emmet_complete_tag = 1
-let g:user_emmet_leader_key='<c-y>'
+let g:user_emmet_leader_key='<c-t>'
 let g:user_emmet_settings = {
         \ 'lang' : 'ja',
         \ 'html' : {
