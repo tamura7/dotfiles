@@ -137,21 +137,16 @@ let b:match_words = "if:endif,foreach:endforeach,\<begin\>:\<end\>"
 
 let g:hl_matchit_enable_on_vim_startup = 1
 let g:hl_matchit_hl_groupname = 'Title'
-let g:hl_matchit_allow_ft = 'html,vim,sh'
 
 "単語を調べる
 NeoBundle 'tyru/open-browser.vim'
 
 
 "emmet
-NeoBundleLazy 'mattn/emmet-vim', {
-  \ 'autoload' : {
-  \   'filetypes' : ['html', 'html5', 'eruby', 'jsp', 'xml', 'css', 'scss', 'coffee'],
-  \   'commands' : ['<Plug>ZenCodingExpandNormal']
-  \ }}
+NeoBundle 'mattn/emmet-vim'
 " emmet {{{
 let g:use_emmet_complete_tag = 1
-let g:user_emmet_leader_key='<c-q>'
+let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
         \ 'lang' : 'ja',
         \ 'html' : {
