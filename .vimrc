@@ -137,7 +137,7 @@ let b:match_words = "if:endif,foreach:endforeach,\<begin\>:\<end\>"
 
 let g:hl_matchit_enable_on_vim_startup = 1
 let g:hl_matchit_hl_groupname = 'Title'
-let g:hl_matchit_allow_ft = 'html\'
+let g:hl_matchit_allow_ft = 'html,vim,sh'
 
 "単語を調べる
 NeoBundle 'tyru/open-browser.vim'
