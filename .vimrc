@@ -130,6 +130,14 @@ let g:vim_markdown_folding_disabled = 1
 "カーソル移動機能を拡張
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-scripts/matchit.zip'
+NeoBundle 'vimtaku/hl_matchit.vim.git'
+
+let b:match_words = '<:>,<div.*>:</div>'
+let b:match_words = "if:endif,foreach:endforeach,\<begin\>:\<end\>"
+
+let g:hl_matchit_enable_on_vim_startup = 1
+let g:hl_matchit_hl_groupname = 'Title'
+let g:hl_matchit_allow_ft = 'html\'
 
 "単語を調べる
 NeoBundle 'tyru/open-browser.vim'
