@@ -389,10 +389,9 @@ nnoremap っd dd
 nnoremap っy yy
 inoremap <silent> っj <ESC>
 
+vnoremap > >gv
+vnoremap < <gv
 
-
-" Netrw
-let b:netrw_islocal=0
 
 " yankround.vim {{{
 nmap p <Plug>(yankround-p)
