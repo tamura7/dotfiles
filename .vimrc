@@ -61,6 +61,11 @@ autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
 autocmd FileType vimfiler nmap <buffer> ll <Plug>(vimfiler_cd_or_edit)
 NeoBundle 'Shougo/unite-ssh'
 
+"シンタックス
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['ruby','php', 'javascript'],
+                           \ 'passive_filetypes': [] }
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
 
@@ -162,33 +167,33 @@ let g:user_emmet_settings = {
         \}
 " }}}
 
-" Python
-NeoBundleLazy "davidhalter/jedi-vim", {
-  \ "autoload": {
-  \   "filetypes": ["python", "python3", "djangohtml"],
-  \ },
-  \ "build" : {
-  \   "mac"  : "pip install jedi",
-  \   "unix" : "pip install jedi",
-  \ }}
-" jedi-vim {{{
-let g:jedi#rename_command = '<Leader>R'
-let g:jedi#goto_assignments_command = '<Leader>G'
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-" }}}
-
-" html
-
+" " Python
+" NeoBundleLazy "davidhalter/jedi-vim", {
+"   \ "autoload": {
+"   \   "filetypes": ["python", "python3", "djangohtml"],
+"   \ },
+"   \ "build" : {
+"   \   "mac"  : "pip install jedi",
+"   \   "unix" : "pip install jedi",
+"   \ }}
+" " jedi-vim {{{
+" let g:jedi#rename_command = '<Leader>R'
+" let g:jedi#goto_assignments_command = '<Leader>G'
+" autocmd FileType python setlocal omnifunc=jedi#completions
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
+" " }}}
+"
+" " html
+"
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'othree/html5.vim'
-
-" javascript
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'moll/vim-node'
-NeoBundle 'pangloss/vim-javascript'
-
+"
+" " javascript
+" NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundle 'moll/vim-node'
+" NeoBundle 'pangloss/vim-javascript'
+"
 "コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
 
@@ -513,7 +518,6 @@ let g:neocomplcache_skip_input_time = '0.5'
 
 
 autocmd FileType php set makeprg=php\ -l\ %
-autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
 
 "-------------------------------------------------
 """ neosnippet設定
