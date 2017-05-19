@@ -348,7 +348,7 @@ nnoremap <silent><Leader><Leader> "zyiw:let @/ =  @z <CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
 nmap <Leader>h <Space><Space>:%s/<C-r>///gI<Left><Left>
-vnoremap <Leader>h <Space><Space>:%s/<C-r>///gI<Left><Left>
+vnoremap <Leader>h <Space><Space>:s/<C-r>///gI<Left><Left>
 nnoremap z<CR> i<CR><ESC>
 
 
