@@ -189,7 +189,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'moll/vim-node'
 NeoBundle 'pangloss/vim-javascript'
 
-" コメントON/OFFを手軽に実行
+"コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
 
 call neobundle#end()
@@ -212,22 +212,17 @@ set nowrap
 set backspace=2
 set modelines=0		" CVE-2007-2438
 "新しい行のインデントを現在行と同じにする
-set autoindent
 
 "インクリメンタルサーチ設定
 set incsearch
 
-"タブ文字、行末など不可視文字を表示
-"set list
 
 "閉じ括弧が入力されたとき、対応する括弧を表示する
 set showmatch
 
 "新しい行を作ったときに高度な自動インデントを行う
 set tabstop=4
-set autoindent
 set expandtab
-set shiftwidth=4
 
 " 外部grepに使うプログラム設定
 set grepprg=ag\ -a
@@ -261,8 +256,6 @@ set showcmd
 set backupdir=$HOME/.vimbackup
 " バッファで開いているファイルのディレクトリでエクスクローラを開始する
 set browsedir=buffer
-" 小文字のみで検索したときに大文字小文字を無視する
-set smartcase
 " 検索結果をハイライト表示する
 set hlsearch
 " 検索ワードの最初の文字を入力した時点で検索を開始する
@@ -316,7 +309,7 @@ nnoremap <silent><C-e> :VimFilerExplor  -winwidth=35<CR>
  
 nnoremap <silent><leader>q :bp<cr>:bd #<cr>
 nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
-nnoremap <silent><Leader>@ viwy
+nnoremap <silent><Leader>c viwy
 
 "バッファ切り替え
 noremap <silent>f<left> :bp<CR>
