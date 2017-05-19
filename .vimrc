@@ -299,6 +299,7 @@ colorscheme tender
 :command! Qr Qfreplace
 :command! Vsh VimShell
 :command! Gu GundoToggle
+:command! Uq UniteClose 
 :command! -nargs=* Vf VimFilerExplor <args>
 "差分
 command! DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p | diffthis
@@ -347,6 +348,7 @@ nnoremap <silent><Leader><Leader> "zyiw:let @/ =  @z <CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
 nmap <Leader>h <Space><Space>:%s/<C-r>///gI<Left><Left>
+vnoremap <Leader>h <Space><Space>:%s/<C-r>///gI<Left><Left>
 nnoremap z<CR> i<CR><ESC>
 
 
