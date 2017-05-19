@@ -312,15 +312,15 @@ nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
 nnoremap <silent><Leader>c viwy
 
 "バッファ切り替え
-noremap <silent>f<left> :bp<CR>
-noremap <silent>f<right> :bn<CR>
-noremap <silent>f<up> <C-^>
+noremap <silent>fh :bp<CR>
+noremap <silent>fl :bn<CR>
+noremap <silent>fj <C-^>
 
 "分割ウィンドウ内の移動
-noremap <silent>z<right> <C-w>l
-noremap <silent>z<left> <C-w>h
-noremap <silent>z<up> <C-w>k
-noremap <silent>z<down> <C-w>j
+noremap <silent>zl <C-w>l
+noremap <silent>zh <C-w>h
+noremap <silent>zk <C-w>k
+noremap <silent>zj <C-w>j
 
 "ノーマルモードへ
 inoremap jj  <Esc>
@@ -413,7 +413,9 @@ nnoremap <Leader>y :<C-u>Unite yankround<CR>
 " let g:EasyMotion_enter_jump_first = 1
 " " }}}
 
-
+"カーソルの形状を変える
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
