@@ -1,0 +1,3461 @@
+snippet abs
+abbr 絶対値
+  abs(${1:$number})
+
+snippet acos
+abbr 逆余弦（アークコサイン）
+  acos(${1:$arg})
+
+snippet acosh
+abbr 逆双曲線余弦（アークハイパボリックコサイン）
+  acosh(${1:$arg})
+
+snippet addcslashes
+abbr C 言語と同様にスラッシュで文字列をクォートする
+  addcslashes(${1:$str}, ${2:$charlist})
+
+snippet addslashes
+abbr 文字列をスラッシュでクォートする
+  addslashes(${1:$str})
+
+snippet array_change_key_case
+abbr 配列のすべてのキーの大文字小文字を変更する
+  array_change_key_case(${1:$array}, ${2:$case})
+
+snippet array_chunk
+abbr 配列を分割する
+  array_chunk(${1:$array}, ${2:$size}, ${3:$preserve_keys})
+
+snippet array_column
+abbr 入力配列から単一のカラムの値を返す
+  array_column(${1:$array}, ${2:$column_key}, ${3:$index_key})
+
+snippet array_combine
+abbr  一方の配列をキーとして、もう一方の配列を値として、ひとつの配列を生成する
+  array_combine(${1:$keys}, ${2:$values})
+
+snippet array_count_values
+abbr 配列の値の数を数える
+  array_count_values(${1:$array})
+
+snippet array_diff
+abbr 配列の差を計算する
+  array_diff(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_diff_assoc
+abbr 追加された添字の確認を含めて配列の差を計算する
+  array_diff_assoc(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_diff_key
+abbr キーを基準にして配列の差を計算する
+  array_diff_key(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_diff_uassoc
+abbr  ユーザーが指定したコールバック関数を利用し、 追加された添字の確認を含めて配列の差を計算する
+  array_diff_uassoc(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$key_compare_func})
+
+snippet array_diff_ukey
+abbr  キーを基準にし、コールバック関数を用いて配列の差を計算する
+  array_diff_ukey(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$key_compare_func})
+
+snippet array_fill
+abbr 配列を指定した値で埋める
+  array_fill(${1:$start_index}, ${2:$num}, ${3:$value})
+
+snippet array_fill_keys
+abbr キーを指定して、配列を値で埋める
+  array_fill_keys(${1:$keys}, ${2:$value})
+
+snippet array_filter
+abbr  コールバック関数を使用して、配列の要素をフィルタリングする
+  array_filter(${1:$array}, ${2:$callback})
+
+snippet array_flip
+abbr 配列のキーと値を反転する
+  array_flip(${1:$array})
+
+snippet array_intersect
+abbr 配列の共通項を計算する
+  array_intersect(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_intersect_assoc
+abbr 追加された添字の確認も含めて配列の共通項を確認する
+  array_intersect_assoc(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_intersect_key
+abbr キーを基準にして配列の共通項を計算する
+  array_intersect_key(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_intersect_uassoc
+abbr 追加された添字の確認も含め、コールバック関数を用いて配列の共通項を確認する
+  array_intersect_uassoc(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$key_compare_func})
+
+snippet array_intersect_ukey
+abbr キーを基準にし、コールバック関数を用いて配列の共通項を計算する
+  array_intersect_ukey(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$key_compare_func})
+
+snippet array_key_exists
+abbr 指定したキーまたは添字が配列にあるかどうかを調べる
+  array_key_exists(${1:$key}, ${2:$array})
+
+snippet array_keys
+abbr 配列のキーすべて、あるいはその一部を返す
+  array_keys(${1:$array}, ${2:$search_value}, ${3:$strict})
+
+snippet array_map
+abbr 指定した配列の要素にコールバック関数を適用する
+  array_map(${1:$callback}, ${2:$array1}, ${3:$...})
+
+snippet array_merge
+abbr ひとつまたは複数の配列をマージする
+  array_merge(${1:$array1}, ${2:$...})
+
+snippet array_merge_recursive
+abbr 二つ以上の配列を再帰的にマージする
+  array_merge_recursive(${1:$array1}, ${2:$...})
+
+snippet array_multisort
+abbr 複数の多次元の配列をソートする
+  array_multisort(${1:&$array1}, ${2:$array1_sort_order}, ${3:$array1_sort_flags}, ${4:$...})
+
+snippet array_pad
+abbr 指定長、指定した値で配列を埋める
+  array_pad(${1:$array}, ${2:$size}, ${3:$value})
+
+snippet array_pop
+abbr 配列の末尾から要素を取り除く
+  array_pop(${1:&$array})
+
+snippet array_product
+abbr 配列の値の積を計算する
+  array_product(${1:$array})
+
+snippet array_push
+abbr 一つ以上の要素を配列の最後に追加する
+  array_push(${1:&$array}, ${2:$value1}, ${3:$...})
+
+snippet array_rand
+abbr 配列から一つ以上の要素をランダムに取得する
+  array_rand(${1:$array}, ${2:$num})
+
+snippet array_reduce
+abbr コールバック関数を用いて配列を普通の値に変更することにより、配列を再帰的に減らす
+  array_reduce(${1:$array}, ${2:$callback}, ${3:$initial})
+
+snippet array_replace
+abbr 渡された配列の要素を置き換える
+  array_replace(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_replace_recursive
+abbr 渡された配列の要素を再帰的に置き換える
+  array_replace_recursive(${1:$array1}, ${2:$array2}, ${3:$...})
+
+snippet array_reverse
+abbr 要素を逆順にした配列を返す
+  array_reverse(${1:$array}, ${2:$preserve_keys})
+
+snippet array_search
+abbr 指定した値を配列で検索し、見つかった場合に対応するキーを返す
+  array_search(${1:$needle}, ${2:$haystack}, ${3:$strict})
+
+snippet array_shift
+abbr 配列の先頭から要素を一つ取り出す
+  array_shift(${1:&$array})
+
+snippet array_slice
+abbr 配列の一部を展開する
+  array_slice(${1:$array}, ${2:$offset}, ${3:$length}, ${4:$preserve_keys})
+
+snippet array_splice
+abbr 配列の一部を削除し、他の要素で置換する
+  array_splice(${1:&$input}, ${2:$offset}, ${3:$length}, ${4:$replacement})
+
+snippet array_sum
+abbr 配列の中の値の合計を計算する
+  array_sum(${1:$array})
+
+snippet array_udiff
+abbr データの比較にコールバック関数を用い、配列の差を計算する
+  array_udiff(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$value_compare_func})
+
+snippet array_udiff_assoc
+abbr データの比較にコールバック関数を用い、追加された添字の確認を含めて配列の差を計算する
+  array_udiff_assoc(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$value_compare_func})
+
+snippet array_udiff_uassoc
+abbr データと添字の比較にコールバック関数を用い、追加された添字の確認を含めて配列の差を計算する
+  array_udiff_uassoc(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$value_compare_func}, ${5:$key_compare_func})
+
+snippet array_uintersect
+abbr データの比較にコールバック関数を用い、配列の共通項を計算する
+  array_uintersect(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$value_compare_func})
+
+snippet array_uintersect_assoc
+abbr データの比較にコールバック関数を用い、追加された添字の確認も含めて配列の共通項を計算する
+  array_uintersect_assoc(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$value_compare_func})
+
+snippet array_uintersect_uassoc
+abbr データと添字の比較にコールバック関数を用い、追加された添字の確認も含めて配列の共通項を計算する
+  array_uintersect_uassoc(${1:$array1}, ${2:$array2}, ${3:$...}, ${4:$value_compare_func}, ${5:$key_compare_func})
+
+snippet array_unique
+abbr 配列から重複した値を削除する
+  array_unique(${1:$array}, ${2:$sort_flags})
+
+snippet array_unshift
+abbr 一つ以上の要素を配列の最初に加える
+  array_unshift(${1:&$array}, ${2:$value1}, ${3:$...})
+
+snippet array_values
+abbr 配列の全ての値を返す
+  array_values(${1:$array})
+
+snippet array_walk
+abbr 配列の全ての要素にユーザー関数を適用する
+  array_walk(${1:&$array}, ${2:$callback}, ${3:$userdata})
+
+snippet array_walk_recursive
+abbr 配列の全ての要素に、ユーザー関数を再帰的に適用する
+  array_walk_recursive(${1:&$array}, ${2:$callback}, ${3:$userdata})
+
+snippet arsort
+abbr 連想キーと要素との関係を維持しつつ配列を逆順にソートする
+  arsort(${1:&$array}, ${2:$sort_flags})
+
+snippet asin
+abbr 逆正弦（アークサイン）
+  asin(${1:$arg})
+
+snippet asinh
+abbr 逆双曲線正弦（アークハイパボリックサイン）
+  asinh(${1:$arg})
+
+snippet asort
+abbr 連想キーと要素との関係を維持しつつ配列をソートする
+  asort(${1:&$array}, ${2:$sort_flags})
+
+snippet assert
+abbr assertion が FALSE であるかどうかを調べる
+  assert(${1:$assertion}, ${2:$description})
+
+snippet assert_options
+abbr 様々な assert フラグを設定/取得する
+  assert_options(${1:$what}, ${2:$value})
+
+snippet atan
+abbr 逆正接（アークタンジェント）
+  atan(${1:$arg})
+
+snippet atan2
+abbr 2 変数のアークタンジェント
+  atan2(${1:$y}, ${2:$x})
+
+snippet atanh
+abbr 逆双曲線正接（アークハイパボリックタンジェント）
+  atanh(${1:$arg})
+
+snippet base64_decode
+abbr MIME base64 方式によりエンコードされたデータをデコードする
+  base64_decode(${1:$data}, ${2:$strict})
+
+snippet base64_encode
+abbr MIME base64 方式でデータをエンコードする
+  base64_encode(${1:$data})
+
+snippet base_convert
+abbr 数値の基数を任意に変換する
+  base_convert(${1:$number}, ${2:$frombase}, ${3:$tobase})
+
+snippet basename
+abbr パスの最後にある名前の部分を返す
+  basename(${1:$path}, ${2:$suffix})
+
+snippet bcadd
+abbr 2つの任意精度の数値を加算する
+  bcadd(${1:$left_operand}, ${2:$right_operand}, ${3:$scale})
+
+snippet bccomp
+abbr 2 つの任意精度数値を比較する
+  bccomp(${1:$left_operand}, ${2:$right_operand}, ${3:$scale})
+
+snippet bcdiv
+abbr 2つの任意精度数値で除算を行う
+  bcdiv(${1:$left_operand}, ${2:$right_operand}, ${3:$scale})
+
+snippet bcmod
+abbr 2 つの任意精度数値の剰余を取得する
+  bcmod(${1:$left_operand}, ${2:$modulus})
+
+snippet bcmul
+abbr 2つの任意精度数値の乗算を行う
+  bcmul(${1:$left_operand}, ${2:$right_operand}, ${3:$scale})
+
+snippet bcpow
+abbr 任意精度数値をべき乗する
+  bcpow(${1:$left_operand}, ${2:$right_operand}, ${3:$scale})
+
+snippet bcpowmod
+abbr 任意精度数値のべき乗の、指定した数値による剰余
+  bcpowmod(${1:$left_operand}, ${2:$right_operand}, ${3:$modulus}, ${4:$scale})
+
+snippet bcscale
+abbr すべての BC 演算関数におけるデフォルトのスケールを設定する
+  bcscale(${1:$scale})
+
+snippet bcsqrt
+abbr 任意精度数値の平方根を取得する
+  bcsqrt(${1:$operand}, ${2:$scale})
+
+snippet bcsub
+abbr 任意精度数値の減算を行う
+  bcsub(${1:$left_operand}, ${2:$right_operand}, ${3:$scale})
+
+snippet bin2hex
+abbr バイナリのデータを16進表現に変換する
+  bin2hex(${1:$str})
+
+snippet bindec
+abbr 2 進数 を 10 進数に変換する
+  bindec(${1:$binary_string})
+
+snippet boolval
+abbr 変数の boolean としての値を取得する
+  boolval(${1:$var})
+
+snippet bzclose
+abbr bzip2 ファイルを閉じる
+  bzclose(${1:$bz})
+
+snippet bzcompress
+abbr 文字列をbzip2形式のデータに圧縮する
+  bzcompress(${1:$source}, ${2:$blocksize}, ${3:$workfactor})
+
+snippet bzdecompress
+abbr bzip2 形式のデータを解凍する
+  bzdecompress(${1:$source}, ${2:$small})
+
+snippet bzerrno
+abbr bzip2 エラー番号を返す
+  bzerrno(${1:$bz})
+
+snippet bzerror
+abbr bzip2 エラー番号とエラー文字列を配列で返す
+  bzerror(${1:$bz})
+
+snippet bzerrstr
+abbr bzip2 エラー文字列を返す
+  bzerrstr(${1:$bz})
+
+snippet bzflush
+abbr  全てのバッファリングされたデータを強制的に書き込む
+  bzflush(${1:$bz})
+
+snippet bzopen
+abbr bzip2 圧縮されたファイルをオープンする
+  bzopen(${1:$filename}, ${2:$mode})
+
+snippet bzread
+abbr バイナリ対応の bzip2 ファイル読み込み
+  bzread(${1:$bz}, ${2:$length})
+
+snippet bzwrite
+abbr バイナリ対応の bzip2 ファイルへの書き込み
+  bzwrite(${1:$bz}, ${2:$data}, ${3:$length})
+
+snippet call_user_func
+abbr 最初の引数で指定したコールバック関数をコールする
+  call_user_func(${1:$callback}, ${2:$parameter}, ${3:$...})
+
+snippet call_user_func_array
+abbr パラメータの配列を指定してコールバック関数をコールする
+  call_user_func_array(${1:$callback}, ${2:$param_arr})
+
+snippet ceil
+abbr 端数の切り上げ
+  ceil(${1:$value})
+
+snippet chdir
+abbr ディレクトリを変更する
+  chdir(${1:$directory})
+
+snippet checkdate
+abbr グレゴリオ暦の日付/時刻の妥当性を確認します
+  checkdate(${1:$month}, ${2:$day}, ${3:$year})
+
+snippet checkdnsrr
+abbr 指定したインターネットホスト名もしくは IP アドレスに対応する DNS レコードを検索する
+  checkdnsrr(${1:$host}, ${2:$type})
+
+snippet chgrp
+abbr ファイルのグループを変更する
+  chgrp(${1:$filename}, ${2:$group})
+
+snippet chmod
+abbr ファイルのモードを変更する
+  chmod(${1:$filename}, ${2:$mode})
+
+snippet chop
+abbr rtrim()のエイリアス
+  chop()
+
+snippet chown
+abbr ファイルの所有者を変更する
+  chown(${1:$filename}, ${2:$user})
+
+snippet chr
+abbr 特定の文字を返す
+  chr(${1:$ascii})
+
+snippet chunk_split
+abbr 文字列をより小さな部分に分割する
+  chunk_split(${1:$body}, ${2:$chunklen}, ${3:$end})
+
+snippet class_alias
+abbr クラスのエイリアスを作成する
+  class_alias(${1:$original}, ${2:$alias}, ${3:$autoload})
+
+snippet class_exists
+abbr クラスが定義済みかどうかを確認する
+  class_exists(${1:$class_name}, ${2:$autoload})
+
+snippet class_implements
+abbr  与えられたクラスが実装しているインターフェイスを返す
+  class_implements(${1:$class}, ${2:$autoload})
+
+snippet class_parents
+abbr  与えられたクラスの親クラスを返す
+  class_parents(${1:$class}, ${2:$autoload})
+
+snippet class_uses
+abbr  指定したクラスが使っているトレイトを返す
+  class_uses(${1:$class}, ${2:$autoload})
+
+snippet clearstatcache
+abbr ファイルのステータスのキャッシュをクリアする
+  clearstatcache(${1:$clear_realpath_cache}, ${2:$filename})
+
+snippet cli_get_process_title
+abbr 現在のプロセスのタイトルを返す
+  cli_get_process_title()
+
+snippet cli_set_process_title
+abbr プロセスのタイトルを設定する
+  cli_set_process_title(${1:$title})
+
+snippet closedir
+abbr ディレクトリハンドルをクローズする
+  closedir(${1:$dir_handle})
+
+snippet closelog
+abbr システムログへの接続を閉じる
+  closelog()
+
+snippet compact
+abbr 変数名とその値から配列を作成する
+  compact(${1:$varname1}, ${2:$...})
+
+snippet connection_aborted
+abbr クライアントとの接続が切断されているかどうかを調べる
+  connection_aborted()
+
+snippet connection_status
+abbr 接続ステータスのビットフィールドを返す
+  connection_status()
+
+snippet constant
+abbr 定数の値を返す
+  constant(${1:$name})
+
+snippet convert_cyr_string
+abbr キリル文字セットを他のものに変換する
+  convert_cyr_string(${1:$str}, ${2:$from}, ${3:$to})
+
+snippet convert_uudecode
+abbr uuencode された文字列をデコードする
+  convert_uudecode(${1:$data})
+
+snippet convert_uuencode
+abbr 文字列を uuencode する
+  convert_uuencode(${1:$data})
+
+snippet copy
+abbr ファイルをコピーする
+  copy(${1:$source}, ${2:$dest}, ${3:$context})
+
+snippet cos
+abbr 余弦（コサイン）
+  cos(${1:$arg})
+
+snippet cosh
+abbr 双曲線余弦（ハイパボリックコサイン）
+  cosh(${1:$arg})
+
+snippet count
+abbr 変数に含まれるすべての要素、あるいはオブジェクトに含まれる何かの数を数える
+  count(${1:$array_or_countable}, ${2:$mode})
+
+snippet count_chars
+abbr 文字列で使用されている文字に関する情報を返す
+  count_chars(${1:$string}, ${2:$mode})
+
+snippet crc32
+abbr 文字列の crc32 多項式計算を行う
+  crc32(${1:$str})
+
+snippet create_function
+abbr 匿名関数(ラムダ形式)を作成する
+  create_function(${1:$args}, ${2:$code})
+
+snippet crypt
+abbr 文字列の一方向のハッシュ化を行う
+  crypt(${1:$str}, ${2:$salt})
+
+snippet ctype_alnum
+abbr 英数字かどうかを調べる
+  ctype_alnum(${1:$text})
+
+snippet ctype_alpha
+abbr 英字かどうかを調べる
+  ctype_alpha(${1:$text})
+
+snippet ctype_cntrl
+abbr 制御文字かどうかを調べる
+  ctype_cntrl(${1:$text})
+
+snippet ctype_digit
+abbr 数字かどうかを調べる
+  ctype_digit(${1:$text})
+
+snippet ctype_graph
+abbr 空白以外の印字可能な文字かどうかを調べる
+  ctype_graph(${1:$text})
+
+snippet ctype_lower
+abbr 小文字かどうかを調べる
+  ctype_lower(${1:$text})
+
+snippet ctype_print
+abbr 印字可能な文字かどうかを調べる
+  ctype_print(${1:$text})
+
+snippet ctype_punct
+abbr  空白、英数字以外の出力可能な文字かどうかを調べる
+  ctype_punct(${1:$text})
+
+snippet ctype_space
+abbr 空白文字かどうか調べる
+  ctype_space(${1:$text})
+
+snippet ctype_upper
+abbr 大文字かどうか調べる
+  ctype_upper(${1:$text})
+
+snippet ctype_xdigit
+abbr  16 進数を表す文字かどうかを調べる
+  ctype_xdigit(${1:$text})
+
+snippet current
+abbr 配列内の現在の要素を返す
+  current(${1:&$array})
+
+snippet date
+abbr ローカルの日付/時刻を書式化する
+  date(${1:$format}, ${2:$timestamp})
+
+snippet date_add
+abbr DateTime::add()のエイリアス
+  date_add()
+
+snippet date_create
+abbr DateTime::__construct()のエイリアス
+  date_create()
+
+snippet date_create_from_format
+abbr DateTime::createFromFormat()のエイリアス
+  date_create_from_format()
+
+snippet date_create_immutable
+abbr DateTimeImmutable::__construct()のエイリアス
+  date_create_immutable()
+
+snippet date_create_immutable_from_format
+abbr DateTimeImmutable::createFromFormat()のエイリアス
+  date_create_immutable_from_format()
+
+snippet date_date_set
+abbr DateTime::setDate()のエイリアス
+  date_date_set()
+
+snippet date_default_timezone_get
+abbr  スクリプト中の日付/時刻関数で使用されるデフォルトタイムゾーンを取得する
+  date_default_timezone_get()
+
+snippet date_default_timezone_set
+abbr  スクリプト中の日付/時刻関数で使用されるデフォルトタイムゾーンを設定する
+  date_default_timezone_set(${1:$timezone_identifier})
+
+snippet date_diff
+abbr DateTime::diff()のエイリアス
+  date_diff()
+
+snippet date_format
+abbr DateTime::format()のエイリアス
+  date_format()
+
+snippet date_get_last_errors
+abbr DateTime::getLastErrors()のエイリアス
+  date_get_last_errors()
+
+snippet date_interval_create_from_date_string
+abbr DateInterval::createFromDateString()のエイリアス
+  date_interval_create_from_date_string()
+
+snippet date_interval_format
+abbr DateInterval::format()のエイリアス
+  date_interval_format()
+
+snippet date_isodate_set
+abbr DateTime::setISODate()のエイリアス
+  date_isodate_set()
+
+snippet date_modify
+abbr DateTime::modify()のエイリアス
+  date_modify()
+
+snippet date_offset_get
+abbr DateTime::getOffset()のエイリアス
+  date_offset_get()
+
+snippet date_parse
+abbr 指定した日付に関する詳細な情報を連想配列で返す
+  date_parse(${1:$date})
+
+snippet date_parse_from_format
+abbr 指定した書式でフォーマットされた日付についての情報を取得する
+  date_parse_from_format(${1:$format}, ${2:$date})
+
+snippet date_sub
+abbr DateTime::sub()のエイリアス
+  date_sub()
+
+snippet date_sun_info
+abbr 日の出/日の入り時刻と薄明かり(twilight)の開始/終了時刻の情報を含む配列を返す
+  date_sun_info(${1:$time}, ${2:$latitude}, ${3:$longitude})
+
+snippet date_sunrise
+abbr  指定した日付と場所についての日の出時刻を返す
+  date_sunrise(${1:$timestamp}, ${2:$format}, ${3:$latitude}, ${4:$longitude}, ${5:$zenith}, ${6:$gmt_offset})
+
+snippet date_sunset
+abbr  指定した日付と場所についての日の入り時刻を返す
+  date_sunset(${1:$timestamp}, ${2:$format}, ${3:$latitude}, ${4:$longitude}, ${5:$zenith}, ${6:$gmt_offset})
+
+snippet date_time_set
+abbr DateTime::setTime()のエイリアス
+  date_time_set()
+
+snippet date_timestamp_get
+abbr DateTime::getTimestamp()のエイリアス
+  date_timestamp_get()
+
+snippet date_timestamp_set
+abbr DateTime::setTimestamp()のエイリアス
+  date_timestamp_set()
+
+snippet date_timezone_get
+abbr DateTime::getTimezone()のエイリアス
+  date_timezone_get()
+
+snippet date_timezone_set
+abbr DateTime::setTimezone()のエイリアス
+  date_timezone_set()
+
+snippet debug_backtrace
+abbr バックトレースを生成する
+  debug_backtrace(${1:$options}, ${2:$limit})
+
+snippet debug_print_backtrace
+abbr  バックトレースを表示する
+  debug_print_backtrace(${1:$options}, ${2:$limit})
+
+snippet debug_zval_dump
+abbr 内部的な Zend の値を表す文字列をダンプする
+  debug_zval_dump(${1:$variable}, ${2:$...})
+
+snippet decbin
+abbr 10 進数を 2 進数に変換する
+  decbin(${1:$number})
+
+snippet dechex
+abbr 10 進数を 16 進数に変換する
+  dechex(${1:$number})
+
+snippet decoct
+abbr 10 進数を 8 進数に変換する
+  decoct(${1:$number})
+
+snippet define
+abbr 名前を指定して定数を定義する
+  define(${1:$name}, ${2:$value}, ${3:$case_insensitive})
+
+snippet defined
+abbr 指定した名前の定数が存在するかどうかを調べる
+  defined(${1:$name})
+
+snippet deg2rad
+abbr  度単位の数値をラジアン単位に変換する
+  deg2rad(${1:$number})
+
+snippet dir
+abbr ディレクトリクラスのインスタンスを返す
+  dir(${1:$directory}, ${2:$context})
+
+snippet dirname
+abbr 親ディレクトリのパスを返す
+  dirname(${1:$path})
+
+snippet disk_free_space
+abbr ファイルシステムあるいはディスクパーティション上で利用可能な領域を返す
+  disk_free_space(${1:$directory})
+
+snippet disk_total_space
+abbr ファイルシステムあるいはディスクパーティションの全体サイズを返す
+  disk_total_space(${1:$directory})
+
+snippet diskfreespace
+abbr disk_free_space()のエイリアス
+  diskfreespace()
+
+snippet dl
+abbr 実行時に PHP 拡張モジュールをロードする
+  dl(${1:$library})
+
+snippet dns_check_record
+abbr checkdnsrr()のエイリアス
+  dns_check_record()
+
+snippet dns_get_mx
+abbr getmxrr()のエイリアス
+  dns_get_mx()
+
+snippet dns_get_record
+abbr ホスト名に関連する DNS リソースレコードを取得する
+  dns_get_record(${1:$hostname}, ${2:$type}, ${3:&$authns}, ${4:&$addtl}, ${5:&$raw})
+
+snippet dom_import_simplexml
+abbr  SimpleXMLElement オブジェクトから DOMElement オブジェクトを取得する
+  dom_import_simplexml(${1:$node})
+
+snippet doubleval
+abbr floatval()のエイリアス
+  doubleval()
+
+snippet each
+abbr 配列から現在のキーと値のペアを返して、カーソルを進める
+  each(${1:&$array})
+
+snippet end
+abbr 配列の内部ポインタを最終要素にセットする
+  end(${1:&$array})
+
+snippet error_get_last
+abbr 最後に発生したエラーを取得する
+  error_get_last()
+
+snippet error_log
+abbr 定義されたエラー処理ルーチンにエラーメッセージを送信する
+  error_log(${1:$message}, ${2:$message_type}, ${3:$destination}, ${4:$extra_headers})
+
+snippet error_reporting
+abbr 出力する PHP エラーの種類を設定する
+  error_reporting(${1:$level})
+
+snippet escapeshellarg
+abbr シェル引数として使用される文字列をエスケープする
+  escapeshellarg(${1:$arg})
+
+snippet escapeshellcmd
+abbr シェルのメタ文字をエスケープする
+  escapeshellcmd(${1:$command})
+
+snippet exec
+abbr 外部プログラムを実行する
+  exec(${1:$command}, ${2:&$output}, ${3:&$return_var})
+
+snippet exp
+abbr e の累乗を計算する
+  exp(${1:$arg})
+
+snippet explode
+abbr 文字列を文字列により分割する
+  explode(${1:$delimiter}, ${2:$string}, ${3:$limit})
+
+snippet expm1
+abbr  値がゼロに近い時にでも精度を保つために exp(number)- 1 を返す
+  expm1(${1:$arg})
+
+snippet extension_loaded
+abbr ある拡張機能がロードされているかどうかを調べる
+  extension_loaded(${1:$name})
+
+snippet extract
+abbr 配列からシンボルテーブルに変数をインポートする
+  extract(${1:&$array}, ${2:$flags}, ${3:$prefix})
+
+snippet ezmlm_hash
+abbr EZMLM で必要なハッシュ値を計算する
+  ezmlm_hash(${1:$addr})
+
+snippet fclose
+abbr オープンされたファイルポインタをクローズする
+  fclose(${1:$handle})
+
+snippet feof
+abbr ファイルポインタがファイル終端に達しているかどうか調べる
+  feof(${1:$handle})
+
+snippet fflush
+abbr 出力をファイルにフラッシュする
+  fflush(${1:$handle})
+
+snippet fgetc
+abbr ファイルポインタから1文字取り出す
+  fgetc(${1:$handle})
+
+snippet fgetcsv
+abbr ファイルポインタから行を取得し、CSVフィールドを処理する
+  fgetcsv(${1:$handle}, ${2:$length}, ${3:$delimiter}, ${4:$enclosure}, ${5:$escape})
+
+snippet fgets
+abbr ファイルポインタから 1 行取得する
+  fgets(${1:$handle}, ${2:$length})
+
+snippet fgetss
+abbr ファイルポインタから 1 行取り出し、HTML タグを取り除く
+  fgetss(${1:$handle}, ${2:$length}, ${3:$allowable_tags})
+
+snippet file
+abbr ファイル全体を読み込んで配列に格納する
+  file(${1:$filename}, ${2:$flags}, ${3:$context})
+
+snippet file_exists
+abbr ファイルまたはディレクトリが存在するかどうか調べる
+  file_exists(${1:$filename})
+
+snippet file_get_contents
+abbr ファイルの内容を全て文字列に読み込む
+  file_get_contents(${1:$filename}, ${2:$use_include_path}, ${3:$context}, ${4:$offset}, ${5:$maxlen})
+
+snippet file_put_contents
+abbr 文字列をファイルに書き込む
+  file_put_contents(${1:$filename}, ${2:$data}, ${3:$flags}, ${4:$context})
+
+snippet fileatime
+abbr ファイルの最終アクセス時刻を取得する
+  fileatime(${1:$filename})
+
+snippet filectime
+abbr ファイルの inode 変更時刻を取得する
+  filectime(${1:$filename})
+
+snippet filegroup
+abbr ファイルのグループを取得する
+  filegroup(${1:$filename})
+
+snippet fileinode
+abbr ファイルの inode を取得する
+  fileinode(${1:$filename})
+
+snippet filemtime
+abbr ファイルの更新時刻を取得する
+  filemtime(${1:$filename})
+
+snippet fileowner
+abbr ファイルの所有者を取得する
+  fileowner(${1:$filename})
+
+snippet fileperms
+abbr ファイルのパーミッションを取得する
+  fileperms(${1:$filename})
+
+snippet filesize
+abbr ファイルのサイズを取得する
+  filesize(${1:$filename})
+
+snippet filetype
+abbr ファイルタイプを取得する
+  filetype(${1:$filename})
+
+snippet filter_has_var
+abbr 指定した型の変数が存在するかどうかを調べる
+  filter_has_var(${1:$type}, ${2:$variable_name})
+
+snippet filter_id
+abbr フィルタの名前からフィルタ ID を返す
+  filter_id(${1:$filtername})
+
+snippet filter_input
+abbr 指定した名前の変数を外部から受け取り、オプションでそれをフィルタリングする
+  filter_input(${1:$type}, ${2:$variable_name}, ${3:$filter}, ${4:$options})
+
+snippet filter_input_array
+abbr 外部から変数を受け取り、オプションでそれらをフィルタリングする
+  filter_input_array(${1:$type}, ${2:$definition}, ${3:$add_empty})
+
+snippet filter_list
+abbr サポートされるフィルタの一覧を返す
+  filter_list()
+
+snippet filter_var
+abbr 指定したフィルタでデータをフィルタリングする
+  filter_var(${1:$variable}, ${2:$filter}, ${3:$options})
+
+snippet filter_var_array
+abbr 複数の変数を受け取り、オプションでそれらをフィルタリングする
+  filter_var_array(${1:$data}, ${2:$definition}, ${3:$add_empty})
+
+snippet finfo_buffer
+abbr 文字列バッファの情報を返す
+  finfo_buffer(${1:$finfo}, ${2:$string}, ${3:$options}, ${4:$context})
+
+snippet finfo_close
+abbr fileinfo リソースを閉じる
+  finfo_close(${1:$finfo})
+
+snippet finfo_file
+abbr ファイルについての情報を返す
+  finfo_file(${1:$finfo}, ${2:$file_name}, ${3:$options}, ${4:$context})
+
+snippet finfo_open
+abbr 新しい fileinfo リソースを作成する
+  finfo_open(${1:$options}, ${2:$magic_file})
+
+snippet finfo_set_flags
+abbr libmagic のオプションを設定する
+  finfo_set_flags(${1:$finfo}, ${2:$options})
+
+snippet floatval
+abbr 変数の float 値を取得する
+  floatval(${1:$var})
+
+snippet flock
+abbr 汎用のファイルロックを行う
+  flock(${1:$handle}, ${2:$operation}, ${3:&$wouldblock})
+
+snippet floor
+abbr 端数の切り捨て
+  floor(${1:$value})
+
+snippet flush
+abbr 出力バッファをフラッシュする
+  flush()
+
+snippet fmod
+abbr 引数で除算をした際の剰余を返す
+  fmod(${1:$x}, ${2:$y})
+
+snippet fnmatch
+abbr ファイル名がパターンにマッチするか調べる
+  fnmatch(${1:$pattern}, ${2:$string}, ${3:$flags})
+
+snippet fopen
+abbr ファイルまたは URL をオープンする
+  fopen(${1:$filename}, ${2:$mode}, ${3:$use_include_path}, ${4:$context})
+
+snippet forward_static_call
+abbr 静的メソッドをコールする
+  forward_static_call(${1:$function}, ${2:$parameter}, ${3:$...})
+
+snippet forward_static_call_array
+abbr 静的メソッドをコールし、引数を配列で渡す
+  forward_static_call_array(${1:$function}, ${2:$parameters})
+
+snippet fpassthru
+abbr ファイルポインタ上に残っているすべてのデータを出力する
+  fpassthru(${1:$handle})
+
+snippet fprintf
+abbr フォーマットされた文字列をストリームに書き込む
+  fprintf(${1:$handle}, ${2:$format}, ${3:$args}, ${4:$...})
+
+snippet fputcsv
+abbr 行を CSV 形式にフォーマットし、ファイルポインタに書き込む
+  fputcsv(${1:$handle}, ${2:$fields}, ${3:$delimiter}, ${4:$enclosure})
+
+snippet fputs
+abbr fwrite()のエイリアス
+  fputs()
+
+snippet fread
+abbr バイナリセーフなファイルの読み込み
+  fread(${1:$handle}, ${2:$length})
+
+snippet fscanf
+abbr フォーマットに基づきファイルからの入力を処理する
+  fscanf(${1:$handle}, ${2:$format}, ${3:&$...})
+
+snippet fseek
+abbr ファイルポインタを移動する
+  fseek(${1:$handle}, ${2:$offset}, ${3:$whence})
+
+snippet fsockopen
+abbr インターネット接続もしくは Unix ドメインソケット接続をオープンする
+  fsockopen(${1:$hostname}, ${2:$port}, ${3:&$errno}, ${4:&$errstr}, ${5:$timeout})
+
+snippet fstat
+abbr オープンしたファイルポインタからファイルに関する情報を取得する
+  fstat(${1:$handle})
+
+snippet ftell
+abbr ファイルの読み書き用ポインタの現在位置を返す
+  ftell(${1:$handle})
+
+snippet ftok
+abbr パス名とプロジェクト ID を、System V IPC キーに変換する
+  ftok(${1:$pathname}, ${2:$proj})
+
+snippet ftruncate
+abbr ファイルを指定した長さに丸める
+  ftruncate(${1:$handle}, ${2:$size})
+
+snippet func_get_arg
+abbr 引数のリストから要素をひとつ返す
+  func_get_arg(${1:$arg_num})
+
+snippet func_get_args
+abbr 関数の引数リストを配列として返す
+  func_get_args()
+
+snippet func_num_args
+abbr 関数に渡された引数の数を返す
+  func_num_args()
+
+snippet function_exists
+abbr 指定した関数が定義されている場合に TRUE を返す
+  function_exists(${1:$function_name})
+
+snippet fwrite
+abbr バイナリセーフなファイル書き込み処理
+  fwrite(${1:$handle}, ${2:$string}, ${3:$length})
+
+snippet gc_collect_cycles
+abbr すべての既存ガベージサイクルを強制的に収集する
+  gc_collect_cycles()
+
+snippet gc_disable
+abbr 循環参照コレクタを無効にする
+  gc_disable()
+
+snippet gc_enable
+abbr 循環参照コレクタを有効にする
+  gc_enable()
+
+snippet gc_enabled
+abbr 循環参照コレクタの状態を返す
+  gc_enabled()
+
+snippet get_browser
+abbr ユーザーのブラウザの機能を取得する
+  get_browser(${1:$user_agent}, ${2:$return_array})
+
+snippet get_called_class
+abbr "静的遅延束縛" のクラス名
+  get_called_class()
+
+snippet get_cfg_var
+abbr PHP 設定オプションの値を取得する
+  get_cfg_var(${1:$option})
+
+snippet get_class
+abbr オブジェクトのクラス名を返す
+  get_class(${1:$object})
+
+snippet get_class_methods
+abbr クラスメソッドの名前を取得する
+  get_class_methods(${1:$class_name})
+
+snippet get_class_vars
+abbr クラスのデフォルトプロパティを取得する
+  get_class_vars(${1:$class_name})
+
+snippet get_current_user
+abbr 現在の PHP スクリプトの所有者の名前を取得する
+  get_current_user()
+
+snippet get_declared_classes
+abbr 定義済のクラスの名前を配列として返す
+  get_declared_classes()
+
+snippet get_declared_interfaces
+abbr 宣言されている全てのインターフェイスの配列を返す
+  get_declared_interfaces()
+
+snippet get_declared_traits
+abbr 宣言されているすべてのトレイトの配列を返す
+  get_declared_traits()
+
+snippet get_defined_constants
+abbr すべての定数の名前とその値を連想配列として返す
+  get_defined_constants(${1:$categorize})
+
+snippet get_defined_functions
+abbr 定義済みの全ての関数を配列で返す
+  get_defined_functions()
+
+snippet get_defined_vars
+abbr  全ての定義済の変数を配列で返す
+  get_defined_vars()
+
+snippet get_extension_funcs
+abbr あるモジュールの関数名を配列として返す
+  get_extension_funcs(${1:$module_name})
+
+snippet get_headers
+abbr  HTTP リクエストに対するレスポンス内で サーバーによって送出された全てのヘッダを取得する
+  get_headers(${1:$url}, ${2:$format})
+
+snippet get_html_translation_table
+abbr htmlspecialchars()および htmlentities() で使用される変換テーブルを返す
+  get_html_translation_table(${1:$table}, ${2:$flags}, ${3:$encoding})
+
+snippet get_include_path
+abbr 現在の include_path 設定オプションを取得する
+  get_include_path()
+
+snippet get_included_files
+abbr include または require で読み込まれたファイルの名前を配列として返す
+  get_included_files()
+
+snippet get_loaded_extensions
+abbr コンパイル/ロードされている全てのモジュールの名前を配列として返す
+  get_loaded_extensions(${1:$zend_extensions})
+
+snippet get_magic_quotes_gpc
+abbr magic_quotes_gpc の現在の設定を得る
+  get_magic_quotes_gpc()
+
+snippet get_magic_quotes_runtime
+abbr magic_quotes_runtime の現在アクティブな設定値を取得する
+  get_magic_quotes_runtime()
+
+snippet get_meta_tags
+abbr ファイル上のすべてのメタタグ情報を配列に展開する
+  get_meta_tags(${1:$filename}, ${2:$use_include_path})
+
+snippet get_object_vars
+abbr 指定したオブジェクトのプロパティを取得する
+  get_object_vars(${1:$object})
+
+snippet get_parent_class
+abbr オブジェクトの親クラスの名前を取得する
+  get_parent_class(${1:$object})
+
+snippet get_required_files
+abbr get_included_files()のエイリアス
+  get_required_files()
+
+snippet get_resource_type
+abbr リソース型を返す
+  get_resource_type(${1:$handle})
+
+snippet getcwd
+abbr カレントのワーキングディレクトリを取得する
+  getcwd()
+
+snippet getdate
+abbr 日付/時刻情報を取得する
+  getdate(${1:$timestamp})
+
+snippet getenv
+abbr 環境変数の値を取得する
+  getenv(${1:$varname})
+
+snippet gethostbyaddr
+abbr  指定した IP アドレスに対応するインターネットホスト名を取得する
+  gethostbyaddr(${1:$ip_address})
+
+snippet gethostbyname
+abbr  インターネットホスト名に対応するIPv4アドレスを取得する
+  gethostbyname(${1:$hostname})
+
+snippet gethostbynamel
+abbr  指定したインターネットホスト名に対応するIPv4アドレスのリストを取得する
+  gethostbynamel(${1:$hostname})
+
+snippet gethostname
+abbr ホスト名を取得する
+  gethostname()
+
+snippet getimagesize
+abbr 画像の大きさを取得する
+  getimagesize(${1:$filename}, ${2:&$imageinfo})
+
+snippet getimagesizefromstring
+abbr 画像の大きさを文字列から取得する
+  getimagesizefromstring(${1:$imagedata}, ${2:&$imageinfo})
+
+snippet getlastmod
+abbr 最終更新時刻を取得する
+  getlastmod()
+
+snippet getmxrr
+abbr 指定したインターネットホスト名に対応する MX レコードを取得する
+  getmxrr(${1:$hostname}, ${2:&$mxhosts}, ${3:&$weight})
+
+snippet getmygid
+abbr PHP スクリプトの所有者の GID を得る
+  getmygid()
+
+snippet getmyinode
+abbr 現在のスクリプトの inode を取得する
+  getmyinode()
+
+snippet getmypid
+abbr PHP のプロセス ID を取得する
+  getmypid()
+
+snippet getmyuid
+abbr PHP スクリプト所有者のユーザー ID を取得する
+  getmyuid()
+
+snippet getopt
+abbr コマンドライン引数のリストからオプションを取得する
+  getopt(${1:$options}, ${2:$longopts})
+
+snippet getprotobyname
+abbr プロトコル名のプロトコル番号を得る
+  getprotobyname(${1:$name})
+
+snippet getprotobynumber
+abbr プロトコル番号が指すプロトコル名を取得する
+  getprotobynumber(${1:$number})
+
+snippet getrandmax
+abbr 乱数の最大値を取得する
+  getrandmax()
+
+snippet getrusage
+abbr 現在のリソース使用状況を取得する
+  getrusage(${1:$who})
+
+snippet getservbyname
+abbr インターネットサービスおよびプロトコルが関連するポート番号を取得する
+  getservbyname(${1:$service}, ${2:$protocol})
+
+snippet getservbyport
+abbr ポートおよびプロトコルに対応するインターネットサービスを得る
+  getservbyport(${1:$port}, ${2:$protocol})
+
+snippet gettimeofday
+abbr 現在の時間を得る
+  gettimeofday(${1:$return_float})
+
+snippet gettype
+abbr 変数の型を取得する
+  gettype(${1:$var})
+
+snippet glob
+abbr パターンにマッチするパス名を探す
+  glob(${1:$pattern}, ${2:$flags})
+
+snippet gmdate
+abbr GMT/UTC の日付/時刻を書式化する
+  gmdate(${1:$format}, ${2:$timestamp})
+
+snippet gmmktime
+abbr GMT 日付から Unix タイムスタンプを取得する
+  gmmktime(${1:$hour}, ${2:$minute}, ${3:$second}, ${4:$month}, ${5:$day}, ${6:$year}, ${7:$is_dst})
+
+snippet gmstrftime
+abbr  ロケールの設定に基づいて GMT/UTC 時刻/日付をフォーマットする
+  gmstrftime(${1:$format}, ${2:$timestamp})
+
+snippet grapheme_extract
+abbr デフォルトの書記素クラスタシーケンスをテキストバッファから取り出す関数。 テキストは UTF-8 でエンコードされている必要があります
+  grapheme_extract(${1:$haystack}, ${2:$size}, ${3:$extract_type}, ${4:$start}, ${5:&$next})
+
+snippet grapheme_stripos
+abbr 大文字小文字を区別せず、文字列内で最初にあらわれる場所の(書記素単位の)位置を見つける
+  grapheme_stripos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet grapheme_stristr
+abbr 大文字小文字を区別せず、haystack 文字列の中で needle が最初に登場した場所以降の部分文字列を返す
+  grapheme_stristr(${1:$haystack}, ${2:$needle}, ${3:$before_needle})
+
+snippet grapheme_strlen
+abbr 書記素単位で文字列の長さを取得する
+  grapheme_strlen(${1:$input})
+
+snippet grapheme_strpos
+abbr 文字列内で最初にあらわれる場所の(書記素単位の)位置を見つける
+  grapheme_strpos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet grapheme_strripos
+abbr 大文字小文字を区別せず、文字列内で最後にあらわれる場所の(書記素単位の)位置を見つける
+  grapheme_strripos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet grapheme_strrpos
+abbr 文字列内で最後にあらわれる場所の(書記素単位の)位置を見つける
+  grapheme_strrpos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet grapheme_strstr
+abbr haystack 文字列の中で、needle が最初に登場した場所以降の部分文字列を返す
+  grapheme_strstr(${1:$haystack}, ${2:$needle}, ${3:$before_needle})
+
+snippet grapheme_substr
+abbr 部分文字列を返す
+  grapheme_substr(${1:$string}, ${2:$start}, ${3:$length})
+
+snippet gzclose
+abbr 開かれたgzファイルへのポインタを閉じる
+  gzclose(${1:$zp})
+
+snippet gzcompress
+abbr 文字列を圧縮する
+  gzcompress(${1:$data}, ${2:$level}, ${3:$encoding})
+
+snippet gzdecode
+abbr gzip 圧縮された文字列をデコードする
+  gzdecode(${1:$data}, ${2:$length})
+
+snippet gzdeflate
+abbr 文字列を deflate 圧縮する
+  gzdeflate(${1:$data}, ${2:$level}, ${3:$encoding})
+
+snippet gzencode
+abbr gzip 圧縮された文字列を作成する
+  gzencode(${1:$data}, ${2:$level}, ${3:$encoding_mode})
+
+snippet gzeof
+abbr gz ファイルポインタが EOF かどうか調べる
+  gzeof(${1:$zp})
+
+snippet gzfile
+abbr gzファイル全体を配列に読み込む
+  gzfile(${1:$filename}, ${2:$use_include_path})
+
+snippet gzgetc
+abbr gz ファイルへのポインタから文字を得る
+  gzgetc(${1:$zp})
+
+snippet gzgets
+abbr ファイルポインタから 1 行を得る
+  gzgets(${1:$zp}, ${2:$length})
+
+snippet gzgetss
+abbr  gzファイルへのポインタから1行を得て、HTMLタグを取り除く
+  gzgetss(${1:$zp}, ${2:$length}, ${3:$allowable_tags})
+
+snippet gzinflate
+abbr deflate圧縮された文字列を解凍する
+  gzinflate(${1:$data}, ${2:$length})
+
+snippet gzopen
+abbr gz ファイルを開く
+  gzopen(${1:$filename}, ${2:$mode}, ${3:$use_include_path})
+
+snippet gzpassthru
+abbr  gzファイルへのポインタから残りのデータ全部を出力する
+  gzpassthru(${1:$zp})
+
+snippet gzputs
+abbr gzwrite()のエイリアス
+  gzputs()
+
+snippet gzread
+abbr バイナリ対応のgzファイル読み込み
+  gzread(${1:$zp}, ${2:$length})
+
+snippet gzrewind
+abbr gz ファイルポインタの示す位置を元に戻す
+  gzrewind(${1:$zp})
+
+snippet gzseek
+abbr gz ファイルポインタの位置を移動する
+  gzseek(${1:$zp}, ${2:$offset}, ${3:$whence})
+
+snippet gztell
+abbr gz ファイルポインタの読み込み/書き込み位置を返します
+  gztell(${1:$zp})
+
+snippet gzuncompress
+abbr 圧縮された文字列を解凍する
+  gzuncompress(${1:$data}, ${2:$length})
+
+snippet gzwrite
+abbr バイナリセーフな gz ファイル書き込み
+  gzwrite(${1:$zp}, ${2:$string}, ${3:$length})
+
+snippet hash
+abbr ハッシュ値(メッセージダイジェスト)を生成する
+  hash(${1:$algo}, ${2:$data}, ${3:$raw_output})
+
+snippet hash_algos
+abbr 登録されているハッシュアルゴリズムの一覧を返す
+  hash_algos()
+
+snippet hash_copy
+abbr ハッシュコンテキストをコピーする
+  hash_copy(${1:$context})
+
+snippet hash_file
+abbr ファイルの内容から、ハッシュ値を生成する
+  hash_file(${1:$algo}, ${2:$filename}, ${3:$raw_output})
+
+snippet hash_final
+abbr 段階的なハッシュ処理を終了し、出来上がったダイジェストを返す
+  hash_final(${1:$context}, ${2:$raw_output})
+
+snippet hash_hmac
+abbr HMAC 方式を使用してハッシュ値を生成する
+  hash_hmac(${1:$algo}, ${2:$data}, ${3:$key}, ${4:$raw_output})
+
+snippet hash_hmac_file
+abbr HMAC 方式を使用して、指定されたファイルの内容からハッシュ値を生成する
+  hash_hmac_file(${1:$algo}, ${2:$filename}, ${3:$key}, ${4:$raw_output})
+
+snippet hash_init
+abbr 段階的なハッシュコンテキストを初期化する
+  hash_init(${1:$algo}, ${2:$options}, ${3:$key})
+
+snippet hash_pbkdf2
+abbr PBKDF2 を使ってパスワードからキーを生成する
+  hash_pbkdf2(${1:$algo}, ${2:$password}, ${3:$salt}, ${4:$iterations}, ${5:$length}, ${6:$raw_output})
+
+snippet hash_update
+abbr アクティブなハッシュコンテキストにデータを投入する
+  hash_update(${1:$context}, ${2:$data})
+
+snippet hash_update_file
+abbr  アクティブなハッシュコンテキストに、ファイルからデータを投入する
+  hash_update_file(${1:$hcontext}, ${2:$filename}, ${3:$scontext})
+
+snippet hash_update_stream
+abbr  アクティブなハッシュコンテキストに、オープンしているストリームから データを投入する
+  hash_update_stream(${1:$context}, ${2:$handle}, ${3:$length})
+
+snippet header
+abbr 生の HTTP ヘッダを送信する
+  header(${1:$string}, ${2:$replace}, ${3:$http_response_code})
+
+snippet header_register_callback
+abbr ヘッダ用の関数を登録する
+  header_register_callback(${1:$callback})
+
+snippet header_remove
+abbr 以前に設定したHTTPヘッダを削除する
+  header_remove(${1:$name})
+
+snippet headers_list
+abbr 送信した(もしくは送信される予定の)レスポンスヘッダの一覧を返す
+  headers_list()
+
+snippet headers_sent
+abbr ヘッダが既に送信されているかどうかを調べる
+  headers_sent(${1:&$file}, ${2:&$line})
+
+snippet hebrev
+abbr 論理表記のヘブライ語を物理表記に変換する
+  hebrev(${1:$hebrew_text}, ${2:$max_chars_per_line})
+
+snippet hebrevc
+abbr 論理表記のヘブライ語を、改行の変換も含めて物理表記に変換する
+  hebrevc(${1:$hebrew_text}, ${2:$max_chars_per_line})
+
+snippet hex2bin
+abbr 16進エンコードされたバイナリ文字列をデコードする
+  hex2bin(${1:$data})
+
+snippet hexdec
+abbr 16 進数を 10 進数に変換する
+  hexdec(${1:$hex_string})
+
+snippet highlight_file
+abbr ファイルの構文ハイライト表示
+  highlight_file(${1:$filename}, ${2:$return})
+
+snippet highlight_string
+abbr 文字列の構文ハイライト表示
+  highlight_string(${1:$str}, ${2:$return})
+
+snippet html_entity_decode
+abbr HTML エンティティを適切な文字に変換する
+  html_entity_decode(${1:$string}, ${2:$flags}, ${3:$encoding})
+
+snippet htmlentities
+abbr 適用可能な文字を全て HTML エンティティに変換する
+  htmlentities(${1:$string}, ${2:$flags}, ${3:$encoding}, ${4:$double_encode})
+
+snippet htmlspecialchars
+abbr 特殊文字を HTML エンティティに変換する
+  htmlspecialchars(${1:$string}, ${2:$flags}, ${3:$encoding}, ${4:$double_encode})
+
+snippet htmlspecialchars_decode
+abbr  特殊な HTML エンティティを文字に戻す
+  htmlspecialchars_decode(${1:$string}, ${2:$flags})
+
+snippet http_build_query
+abbr URL エンコードされたクエリ文字列を生成する
+  http_build_query(${1:$query_data}, ${2:$numeric_prefix}, ${3:$arg_separator}, ${4:$enc_type})
+
+snippet http_response_code
+abbr HTTP レスポンスコードを取得または設定
+  http_response_code(${1:$response_code})
+
+snippet hypot
+abbr  直角三角形の斜辺の長さを計算する
+  hypot(${1:$x}, ${2:$y})
+
+snippet idate
+abbr ローカルな時刻/日付を整数として整形する
+  idate(${1:$format}, ${2:$timestamp})
+
+snippet idn_to_ascii
+abbr ドメイン名をIDNAのASCII形式に変換する
+  idn_to_ascii(${1:$domain}, ${2:$options}, ${3:$variant}, ${4:&$idna_info})
+
+snippet idn_to_utf8
+abbr IDNAのASCII方式でエンコードされたドメイン名をUnicodeに変換する
+  idn_to_utf8(${1:$domain}, ${2:$options}, ${3:$variant}, ${4:&$idna_info})
+
+snippet ignore_user_abort
+abbr クライアントの接続が切断された際にスクリプトの実行を終了するかどうかを設定する
+  ignore_user_abort(${1:$value})
+
+snippet image_type_to_extension
+abbr 画像形式からファイルの拡張子を取得する
+  image_type_to_extension(${1:$imagetype}, ${2:$include_dot})
+
+snippet image_type_to_mime_type
+abbr  getimagesize, exif_read_data, exif_thumbnail, exif_imagetypeから返される 画像形式のMIMEタイプを取得する
+  image_type_to_mime_type(${1:$imagetype})
+
+snippet implode
+abbr 配列要素を文字列により連結する
+  implode(${1:$glue}, ${2:$pieces})
+
+snippet in_array
+abbr 配列に値があるかチェックする
+  in_array(${1:$needle}, ${2:$haystack}, ${3:$strict})
+
+snippet inet_ntop
+abbr パックされたインターネットアドレスを、人間が読める形式に変換する
+  inet_ntop(${1:$in_addr})
+
+snippet inet_pton
+abbr 人間が読める形式の IP アドレスを、パックされた in_addr 形式に変換する
+  inet_pton(${1:$address})
+
+snippet ini_alter
+abbr ini_set()のエイリアス
+  ini_alter()
+
+snippet ini_get
+abbr 設定オプションの値を得る
+  ini_get(${1:$varname})
+
+snippet ini_get_all
+abbr すべての設定オプションを得る
+  ini_get_all(${1:$extension}, ${2:$details})
+
+snippet ini_restore
+abbr 設定オプションの値を元に戻す
+  ini_restore(${1:$varname})
+
+snippet ini_set
+abbr 設定オプションの値を設定する
+  ini_set(${1:$varname}, ${2:$newvalue})
+
+snippet interface_exists
+abbr インターフェイスが宣言されているかどうかを確認する
+  interface_exists(${1:$interface_name}, ${2:$autoload})
+
+snippet intl_error_name
+abbr 指定したエラーコードに対応する名前を取得する
+  intl_error_name(${1:$error_code})
+
+snippet intl_get_error_code
+abbr 直近のエラーコードを取得する
+  intl_get_error_code()
+
+snippet intl_get_error_message
+abbr 直近のエラーの説明を取得する
+  intl_get_error_message()
+
+snippet intl_is_failure
+abbr 指定したエラーコードが失敗を表すかどうかを調べる
+  intl_is_failure(${1:$error_code})
+
+snippet intval
+abbr 変数の整数としての値を取得する
+  intval(${1:$var}, ${2:$base})
+
+snippet ip2long
+abbr ドット表記の(IPv4)IP アドレスを、適切なアドレスに変換する
+  ip2long(${1:$ip_address})
+
+snippet iptcembed
+abbr バイナリ IPTC データを JPEG イメージに埋めこむ
+  iptcembed(${1:$iptcdata}, ${2:$jpeg_file_name}, ${3:$spool})
+
+snippet iptcparse
+abbr バイナリの IPTC ブロックのタグをパースする
+  iptcparse(${1:$iptcblock})
+
+snippet is_a
+abbr オブジェクトがこのクラスのものであるか、このクラスをその親クラスのひとつとしているかどうかを調べる
+  is_a(${1:$object}, ${2:$class_name}, ${3:$allow_string})
+
+snippet is_array
+abbr 変数が配列かどうかを検査する
+  is_array(${1:$var})
+
+snippet is_bool
+abbr  変数が boolean であるかを調べる
+  is_bool(${1:$var})
+
+snippet is_callable
+abbr  引数が、関数としてコール可能な構造であるかどうかを調べる
+  is_callable(${1:$name}, ${2:$syntax_only}, ${3:&$callable_name})
+
+snippet is_dir
+abbr ファイルがディレクトリかどうかを調べる
+  is_dir(${1:$filename})
+
+snippet is_double
+abbr is_float()のエイリアス
+  is_double()
+
+snippet is_executable
+abbr ファイルが実行可能かどうかを調べる
+  is_executable(${1:$filename})
+
+snippet is_file
+abbr 通常ファイルかどうかを調べる
+  is_file(${1:$filename})
+
+snippet is_finite
+abbr 値が有限の数値であるかどうかを判定する
+  is_finite(${1:$val})
+
+snippet is_float
+abbr 変数の型が float かどうか調べる
+  is_float(${1:$var})
+
+snippet is_infinite
+abbr 値が無限大であるかどうかを判定する
+  is_infinite(${1:$val})
+
+snippet is_int
+abbr 変数が整数型かどうかを検査する
+  is_int(${1:$var})
+
+snippet is_integer
+abbr is_int()のエイリアス
+  is_integer()
+
+snippet is_link
+abbr ファイルがシンボリックリンクかどうかを調べる
+  is_link(${1:$filename})
+
+snippet is_long
+abbr is_int()のエイリアス
+  is_long()
+
+snippet is_nan
+abbr 値が数値でないかどうかを判定する
+  is_nan(${1:$val})
+
+snippet is_null
+abbr  変数が NULL かどうか調べる
+  is_null(${1:$var})
+
+snippet is_numeric
+abbr  変数が数字または数値形式の文字列であるかを調べる
+  is_numeric(${1:$var})
+
+snippet is_object
+abbr 変数がオブジェクトかどうかを検査する
+  is_object(${1:$var})
+
+snippet is_readable
+abbr ファイルが存在し、読み込み可能であるかどうかを知る
+  is_readable(${1:$filename})
+
+snippet is_real
+abbr is_float()のエイリアス
+  is_real()
+
+snippet is_resource
+abbr  変数がリソースかどうかを調べる
+  is_resource(${1:$var})
+
+snippet is_scalar
+abbr  変数がスカラかどうかを調べる
+  is_scalar(${1:$var})
+
+snippet is_string
+abbr 変数の型が文字列かどうかを調べる
+  is_string(${1:$var})
+
+snippet is_subclass_of
+abbr あるオブジェクトが指定したクラスのサブクラスに属するかどうかを調べる
+  is_subclass_of(${1:$object}, ${2:$class_name}, ${3:$allow_string})
+
+snippet is_uploaded_file
+abbr HTTP POST でアップロードされたファイルかどうかを調べる
+  is_uploaded_file(${1:$filename})
+
+snippet is_writable
+abbr ファイルが書き込み可能かどうかを調べる
+  is_writable(${1:$filename})
+
+snippet is_writeable
+abbr is_writable()のエイリアス
+  is_writeable()
+
+snippet iterator_apply
+abbr ユーザー関数をイテレータのすべての要素でコールする
+  iterator_apply(${1:$iterator}, ${2:$function}, ${3:$args})
+
+snippet iterator_count
+abbr イテレータにある要素をカウントする
+  iterator_count(${1:$iterator})
+
+snippet iterator_to_array
+abbr イテレータを配列にコピーする
+  iterator_to_array(${1:$iterator}, ${2:$use_keys})
+
+snippet join
+abbr implode()のエイリアス
+  join()
+
+snippet json_decode
+abbr JSON 文字列をデコードする
+  json_decode(${1:$json}, ${2:$assoc}, ${3:$depth}, ${4:$options})
+
+snippet json_encode
+abbr 値を JSON 形式にして返す
+  json_encode(${1:$value}, ${2:$options}, ${3:$depth})
+
+snippet json_last_error
+abbr 直近に発生したエラーを返す
+  json_last_error()
+
+snippet json_last_error_msg
+abbr 直近の json_encode()や json_decode() の呼び出しのエラー文字列を返すl
+  json_last_error_msg()
+
+snippet key
+abbr 配列からキーを取り出す
+  key(${1:&$array})
+
+snippet key_exists
+abbr array_key_exists()のエイリアス
+  key_exists()
+
+snippet krsort
+abbr 配列をキーで逆順にソートする
+  krsort(${1:&$array}, ${2:$sort_flags})
+
+snippet ksort
+abbr 配列をキーでソートする
+  ksort(${1:&$array}, ${2:$sort_flags})
+
+snippet lcfirst
+abbr 文字列の最初の文字を小文字にする
+  lcfirst(${1:$str})
+
+snippet lcg_value
+abbr 複合線形合同法
+  lcg_value()
+
+snippet lchgrp
+abbr シンボリックリンクのグループ所有権を変更する
+  lchgrp(${1:$filename}, ${2:$group})
+
+snippet lchown
+abbr シンボリックリンクの所有者を変更する
+  lchown(${1:$filename}, ${2:$user})
+
+snippet levenshtein
+abbr 二つの文字列のレーベンシュタイン距離を計算する
+  levenshtein(${1:$str1}, ${2:$str2})
+
+snippet libxml_clear_errors
+abbr  libxmlエラーハンドラをクリアする
+  libxml_clear_errors()
+
+snippet libxml_disable_entity_loader
+abbr 外部エンティティの読み込み機能を無効にする
+  libxml_disable_entity_loader(${1:$disable})
+
+snippet libxml_get_errors
+abbr  エラー配列を取得する
+  libxml_get_errors()
+
+snippet libxml_get_last_error
+abbr  libxmlから直近のエラーを取得する
+  libxml_get_last_error()
+
+snippet libxml_set_external_entity_loader
+abbr デフォルトの外部エンティティローダーを変更する
+  libxml_set_external_entity_loader(${1:$resolver_function})
+
+snippet libxml_set_streams_context
+abbr  次のlibxmlドキュメントの読込／書きこみのためにストリームコンテキストを設定する
+  libxml_set_streams_context(${1:$streams_context})
+
+snippet libxml_use_internal_errors
+abbr  libxmlエラーを無効にし、ユーザーが必要に応じてエラー情報を取得できるようにする
+  libxml_use_internal_errors(${1:$use_errors})
+
+snippet link
+abbr ハードリンクを作成する
+  link(${1:$target}, ${2:$link})
+
+snippet linkinfo
+abbr リンクに関する情報を取得する
+  linkinfo(${1:$path})
+
+snippet localeconv
+abbr 数値に関するフォーマット情報を得る
+  localeconv()
+
+snippet localtime
+abbr ローカルタイムを得る
+  localtime(${1:$timestamp}, ${2:$is_associative})
+
+snippet log
+abbr 自然対数
+  log(${1:$arg}, ${2:$base})
+
+snippet log10
+abbr 底が 10 の対数
+  log10(${1:$arg})
+
+snippet log1p
+abbr  値がゼロに近い時にでも精度を保つ方法で計算した log(1 + number)を返す
+  log1p(${1:$number})
+
+snippet long2ip
+abbr (IPv4)インターネットアドレスをインターネット標準ドット表記に変換する
+  long2ip(${1:$proper_address})
+
+snippet lstat
+abbr ファイルあるいはシンボリックリンクの情報を取得する
+  lstat(${1:$filename})
+
+snippet ltrim
+abbr 文字列の最初から空白(もしくはその他の文字)を取り除く
+  ltrim(${1:$str}, ${2:$character_mask})
+
+snippet mail
+abbr メールを送信する
+  mail(${1:$to}, ${2:$subject}, ${3:$message}, ${4:$additional_headers}, ${5:$additional_parameters})
+
+snippet max
+abbr 最大値を返す
+  max(${1:$values})
+
+snippet md5
+abbr 文字列のmd5ハッシュ値を計算する
+  md5(${1:$str}, ${2:$raw_output})
+
+snippet md5_file
+abbr 指定したファイルのMD5ハッシュ値を計算する
+  md5_file(${1:$filename}, ${2:$raw_output})
+
+snippet memory_get_peak_usage
+abbr PHP によって割り当てられたメモリの最大値を返す
+  memory_get_peak_usage(${1:$real_usage})
+
+snippet memory_get_usage
+abbr PHP に割り当てられたメモリの量を返す
+  memory_get_usage(${1:$real_usage})
+
+snippet metaphone
+abbr 文字列の metaphone キーを計算する
+  metaphone(${1:$str}, ${2:$phonemes})
+
+snippet method_exists
+abbr クラスメソッドが存在するかどうかを確認する
+  method_exists(${1:$object}, ${2:$method_name})
+
+snippet mhash
+abbr ハッシュ値を計算する
+  mhash(${1:$hash}, ${2:$data}, ${3:$key})
+
+snippet mhash_count
+abbr 利用可能なハッシュ ID の最大値を得る
+  mhash_count()
+
+snippet mhash_get_block_size
+abbr 指定したハッシュのブロックサイズを得る
+  mhash_get_block_size(${1:$hash})
+
+snippet mhash_get_hash_name
+abbr 指定したハッシュの名前を得る
+  mhash_get_hash_name(${1:$hash})
+
+snippet mhash_keygen_s2k
+abbr キーを生成する
+  mhash_keygen_s2k(${1:$hash}, ${2:$password}, ${3:$salt}, ${4:$bytes})
+
+snippet microtime
+abbr  現在の Unix タイムスタンプをマイクロ秒まで返す
+  microtime(${1:$get_as_float})
+
+snippet mime_content_type
+abbr ファイルの MIME Content-type を検出する(非推奨)
+  mime_content_type(${1:$filename})
+
+snippet min
+abbr 最小値を返す
+  min(${1:$values})
+
+snippet mkdir
+abbr ディレクトリを作る
+  mkdir(${1:$pathname}, ${2:$mode}, ${3:$recursive}, ${4:$context})
+
+snippet mktime
+abbr 日付を Unix のタイムスタンプとして取得する
+  mktime(${1:$hour}, ${2:$minute}, ${3:$second}, ${4:$month}, ${5:$day}, ${6:$year}, ${7:$is_dst})
+
+snippet money_format
+abbr 数値を金額文字列にフォーマットする
+  money_format(${1:$format}, ${2:$number})
+
+snippet move_uploaded_file
+abbr アップロードされたファイルを新しい位置に移動する
+  move_uploaded_file(${1:$filename}, ${2:$destination})
+
+snippet mt_getrandmax
+abbr 乱数値の最大値を表示する
+  mt_getrandmax()
+
+snippet mt_rand
+abbr よりよい乱数値を生成する
+  mt_rand()
+
+snippet mt_srand
+abbr 改良型乱数生成器にシードを指定する
+  mt_srand(${1:$seed})
+
+snippet natcasesort
+abbr 大文字小文字を区別しない"自然順"アルゴリズムを用いて配列をソートする
+  natcasesort(${1:&$array})
+
+snippet natsort
+abbr "自然順"アルゴリズムで配列をソートする
+  natsort(${1:&$array})
+
+snippet next
+abbr 内部配列ポインタを進める
+  next(${1:&$array})
+
+snippet nl2br
+abbr 改行文字の前に HTML の改行タグを挿入する
+  nl2br(${1:$string}, ${2:$is_xhtml})
+
+snippet nl_langinfo
+abbr 言語およびロケール情報を検索する
+  nl_langinfo(${1:$item})
+
+snippet number_format
+abbr 数字を千位毎にグループ化してフォーマットする
+  number_format(${1:$number}, ${2:$decimals})
+
+snippet ob_clean
+abbr 出力バッファをクリア(消去)する
+  ob_clean()
+
+snippet ob_end_clean
+abbr 出力用バッファをクリア(消去)し、出力のバッファリングをオフにする
+  ob_end_clean()
+
+snippet ob_end_flush
+abbr 出力用バッファをフラッシュ(送信)し、出力のバッファリングをオフにする
+  ob_end_flush()
+
+snippet ob_flush
+abbr 出力バッファをフラッシュ(送信)する
+  ob_flush()
+
+snippet ob_get_clean
+abbr 現在のバッファの内容を取得し、出力バッファを削除する
+  ob_get_clean()
+
+snippet ob_get_contents
+abbr 出力用バッファの内容を返す
+  ob_get_contents()
+
+snippet ob_get_flush
+abbr 出力バッファをフラッシュし、その内容を文字列として返した後で出力バッファリングを終了する
+  ob_get_flush()
+
+snippet ob_get_length
+abbr 出力バッファの長さを返す
+  ob_get_length()
+
+snippet ob_get_level
+abbr 出力バッファリング機構のネストレベルを返す
+  ob_get_level()
+
+snippet ob_get_status
+abbr 出力バッファのステータスを取得する
+  ob_get_status(${1:$full_status})
+
+snippet ob_gzhandler
+abbr 出力バッファを gzip 圧縮するための ob_start コールバック関数
+  ob_gzhandler(${1:$buffer}, ${2:$mode})
+
+snippet ob_implicit_flush
+abbr 自動フラッシュをオンまたはオフにする
+  ob_implicit_flush(${1:$flag})
+
+snippet ob_list_handlers
+abbr 使用中の出力ハンドラの一覧を取得する
+  ob_list_handlers()
+
+snippet ob_start
+abbr 出力のバッファリングを有効にする
+  ob_start(${1:$output_callback}, ${2:$chunk_size}, ${3:$flags})
+
+snippet octdec
+abbr 8 進数を 10 進数に変換する
+  octdec(${1:$octal_string})
+
+snippet opendir
+abbr ディレクトリハンドルをオープンする
+  opendir(${1:$path}, ${2:$context})
+
+snippet openlog
+abbr システムのロガーへの接続をオープンする
+  openlog(${1:$ident}, ${2:$option}, ${3:$facility})
+
+snippet ord
+abbr 文字の ASCII 値を返す
+  ord(${1:$string})
+
+snippet output_add_rewrite_var
+abbr URL リライタの値を追加する
+  output_add_rewrite_var(${1:$name}, ${2:$value})
+
+snippet output_reset_rewrite_vars
+abbr URL リライタの値をリセットする
+  output_reset_rewrite_vars()
+
+snippet pack
+abbr データをバイナリ文字列にパックする
+  pack(${1:$format}, ${2:$args}, ${3:$...})
+
+snippet parse_ini_file
+abbr 設定ファイルをパースする
+  parse_ini_file(${1:$filename}, ${2:$process_sections}, ${3:$scanner_mode})
+
+snippet parse_ini_string
+abbr 設定文字列をパースする
+  parse_ini_string(${1:$ini}, ${2:$process_sections}, ${3:$scanner_mode})
+
+snippet parse_str
+abbr 文字列を処理し、変数に代入する
+  parse_str(${1:$str}, ${2:&$arr})
+
+snippet parse_url
+abbr URL を解釈し、その構成要素を返す
+  parse_url(${1:$url}, ${2:$component})
+
+snippet passthru
+abbr 外部プログラムを実行し、未整形の出力を表示する
+  passthru(${1:$command}, ${2:&$return_var})
+
+snippet password_get_info
+abbr 指定したハッシュに関する情報を返す
+  password_get_info(${1:$hash})
+
+snippet password_hash
+abbr パスワードハッシュを作る
+  password_hash(${1:$password}, ${2:$algo}, ${3:$options})
+
+snippet password_needs_rehash
+abbr 指定したハッシュがオプションにマッチするかどうかを調べる
+  password_needs_rehash(${1:$hash}, ${2:$algo}, ${3:$options})
+
+snippet password_verify
+abbr パスワードがハッシュにマッチするかどうかを調べる
+  password_verify(${1:$password}, ${2:$hash})
+
+snippet pathinfo
+abbr ファイルパスに関する情報を返す
+  pathinfo(${1:$path}, ${2:$options})
+
+snippet pclose
+abbr プロセスのファイルポインタをクローズする
+  pclose(${1:$handle})
+
+snippet pfsockopen
+abbr 持続的な Internet または Unix ドメインソケット接続をオープンする
+  pfsockopen(${1:$hostname}, ${2:$port}, ${3:&$errno}, ${4:&$errstr}, ${5:$timeout})
+
+snippet php_ini_loaded_file
+abbr 読み込まれた php.ini ファイルのパスを取得する
+  php_ini_loaded_file()
+
+snippet php_ini_scanned_files
+abbr 追加の ini ディレクトリにある .ini ファイルのリストを取得する
+  php_ini_scanned_files()
+
+snippet php_sapi_name
+abbr ウェブサーバーと PHP の間のインターフェイスの型を返す
+  php_sapi_name()
+
+snippet php_strip_whitespace
+abbr コメントと空白文字を取り除いたソースを返す
+  php_strip_whitespace(${1:$filename})
+
+snippet php_uname
+abbr PHP が稼動しているオペレーティングシステムに関する情報を返す
+  php_uname(${1:$mode})
+
+snippet phpcredits
+abbr PHP に関するクレジットを出力する
+  phpcredits(${1:$flag})
+
+snippet phpinfo
+abbr PHP の設定情報を出力する
+  phpinfo(${1:$what})
+
+snippet phpversion
+abbr 現在の PHP バージョンを取得する
+  phpversion(${1:$extension})
+
+snippet pi
+abbr 円周率の値を得る
+  pi()
+
+snippet popen
+abbr プロセスへのファイルポインタをオープンする
+  popen(${1:$command}, ${2:$mode})
+
+snippet pos
+abbr current()のエイリアス
+  pos()
+
+snippet pow
+abbr 指数表現
+  pow(${1:$base}, ${2:$exp})
+
+snippet preg_filter
+abbr 正規表現による検索と置換を行う
+  preg_filter(${1:$pattern}, ${2:$replacement}, ${3:$subject}, ${4:$limit}, ${5:&$count})
+
+snippet preg_grep
+abbr パターンにマッチする配列の要素を返す
+  preg_grep(${1:$pattern}, ${2:$input}, ${3:$flags})
+
+snippet preg_last_error
+abbr 直近の PCRE 正規表現処理のエラーコードを返す
+  preg_last_error()
+
+snippet preg_match
+abbr 正規表現によるマッチングを行う
+  preg_match(${1:$pattern}, ${2:$subject}, ${3:&$matches}, ${4:$flags}, ${5:$offset})
+
+snippet preg_match_all
+abbr 繰り返し正規表現検索を行う
+  preg_match_all(${1:$pattern}, ${2:$subject}, ${3:&$matches}, ${4:$flags}, ${5:$offset})
+
+snippet preg_quote
+abbr 正規表現文字をクオートする
+  preg_quote(${1:$str}, ${2:$delimiter})
+
+snippet preg_replace
+abbr 正規表現検索および置換を行う
+  preg_replace(${1:$pattern}, ${2:$replacement}, ${3:$subject}, ${4:$limit}, ${5:&$count})
+
+snippet preg_replace_callback
+abbr 正規表現検索を行い、コールバック関数を使用して置換を行う
+  preg_replace_callback(${1:$pattern}, ${2:$callback}, ${3:$subject}, ${4:$limit}, ${5:&$count})
+
+snippet preg_split
+abbr 正規表現で文字列を分割する
+  preg_split(${1:$pattern}, ${2:$subject}, ${3:$limit}, ${4:$flags})
+
+snippet prev
+abbr 内部の配列ポインタをひとつ前に戻す
+  prev(${1:&$array})
+
+snippet print_r
+abbr  指定した変数に関する情報を解りやすく出力する
+  print_r(${1:$expression}, ${2:$return})
+
+snippet printf
+abbr フォーマット済みの文字列を出力する
+  printf(${1:$format}, ${2:$args}, ${3:$...})
+
+snippet proc_close
+abbr proc_open()で開かれたプロセスを閉じ、そのプロセスの終了コードを返す
+  proc_close(${1:$process})
+
+snippet proc_get_status
+abbr proc_open()で開かれたプロセスに関する情報を取得する
+  proc_get_status(${1:$process})
+
+snippet proc_nice
+abbr 現在のプロセスの優先度を変更する
+  proc_nice(${1:$increment})
+
+snippet proc_open
+abbr  コマンドを実行し、入出力用にファイルポインタを開く
+  proc_open(${1:$cmd}, ${2:$descriptorspec}, ${3:&$pipes}, ${4:$cwd}, ${5:$env}, ${6:$other_options})
+
+snippet proc_terminate
+abbr proc_open でオープンされたプロセスを強制終了する
+  proc_terminate(${1:$process}, ${2:$signal})
+
+snippet property_exists
+abbr  オブジェクトもしくはクラスにプロパティが存在するかどうかを調べる
+  property_exists(${1:$class}, ${2:$property})
+
+snippet putenv
+abbr 環境変数の値を設定する
+  putenv(${1:$setting})
+
+snippet quoted_printable_decode
+abbr quoted-printable 文字列を 8 ビット文字列に変換する
+  quoted_printable_decode(${1:$str})
+
+snippet quoted_printable_encode
+abbr 8 ビット文字列を quoted-printable 文字列に変換する
+  quoted_printable_encode(${1:$str})
+
+snippet quotemeta
+abbr メタ文字をクォートする
+  quotemeta(${1:$str})
+
+snippet rad2deg
+abbr  ラジアン単位の数値を度単位に変換する
+  rad2deg(${1:$number})
+
+snippet rand
+abbr 乱数を生成する
+  rand()
+
+snippet range
+abbr ある範囲の整数を有する配列を作成する
+  range(${1:$start}, ${2:$end}, ${3:$step})
+
+snippet rawurldecode
+abbr URL エンコードされた文字列をデコードする
+  rawurldecode(${1:$str})
+
+snippet rawurlencode
+abbr RFC 3986 に基づき URL エンコードを行う
+  rawurlencode(${1:$str})
+
+snippet readdir
+abbr ディレクトリハンドルからエントリを読み込む
+  readdir(${1:$dir_handle})
+
+snippet readfile
+abbr ファイルを出力する
+  readfile(${1:$filename}, ${2:$use_include_path}, ${3:$context})
+
+snippet readgzfile
+abbr gz ファイルを出力する
+  readgzfile(${1:$filename}, ${2:$use_include_path})
+
+snippet readline
+abbr 一行読み込む
+  readline(${1:$prompt})
+
+snippet readline_add_history
+abbr ヒストリに 1 行追加する
+  readline_add_history(${1:$line})
+
+snippet readline_callback_handler_install
+abbr  readline コールバックインターフェイスと端末を初期化し、 プロンプトを表示して結果をすぐに返す
+  readline_callback_handler_install(${1:$prompt}, ${2:$callback})
+
+snippet readline_callback_handler_remove
+abbr インストールされたハンドラを削除し、端末の設定をもとに戻す
+  readline_callback_handler_remove()
+
+snippet readline_callback_read_char
+abbr 文字を読み込み、改行を受け取ると readline コールバックインターフェイスに通知する
+  readline_callback_read_char()
+
+snippet readline_clear_history
+abbr ヒストリをクリアする
+  readline_clear_history()
+
+snippet readline_completion_function
+abbr 補完関数を登録する
+  readline_completion_function(${1:$function})
+
+snippet readline_info
+abbr 種々の readline の内部変数を取得/設定する
+  readline_info(${1:$varname}, ${2:$newvalue})
+
+snippet readline_on_new_line
+abbr カーソルが新しい行に移動したことを readline に通知する
+  readline_on_new_line()
+
+snippet readline_read_history
+abbr ヒストリを読み込む
+  readline_read_history(${1:$filename})
+
+snippet readline_redisplay
+abbr 画面を再描画する
+  readline_redisplay()
+
+snippet readline_write_history
+abbr ヒストリを書きこむ
+  readline_write_history(${1:$filename})
+
+snippet readlink
+abbr シンボリックリンク先を返す
+  readlink(${1:$path})
+
+snippet realpath
+abbr 絶対パス名を返す
+  realpath(${1:$path})
+
+snippet realpath_cache_get
+abbr realpath キャッシュ・エントリーを取得
+  realpath_cache_get()
+
+snippet realpath_cache_size
+abbr realpath キャッシュサイズを取得
+  realpath_cache_size()
+
+snippet register_shutdown_function
+abbr シャットダウン時に実行する関数を登録する
+  register_shutdown_function(${1:$callback}, ${2:$parameter}, ${3:$...})
+
+snippet register_tick_function
+abbr 各 tick で実行する関数を登録する
+  register_tick_function(${1:$function}, ${2:$arg}, ${3:$...})
+
+snippet rename
+abbr ファイルをリネームする
+  rename(${1:$oldname}, ${2:$newname}, ${3:$context})
+
+snippet reset
+abbr 配列の内部ポインタを先頭の要素にセットする
+  reset(${1:&$array})
+
+snippet restore_error_handler
+abbr 以前のエラーハンドラ関数を回復する
+  restore_error_handler()
+
+snippet restore_exception_handler
+abbr  以前の例外ハンドラ関数を回復する
+  restore_exception_handler()
+
+snippet restore_include_path
+abbr include_path 設定オプションの値を元に戻す
+  restore_include_path()
+
+snippet rewind
+abbr ファイルポインタの位置を先頭に戻す
+  rewind(${1:$handle})
+
+snippet rewinddir
+abbr ディレクトリハンドルを元に戻す
+  rewinddir(${1:$dir_handle})
+
+snippet rmdir
+abbr ディレクトリを削除する
+  rmdir(${1:$dirname}, ${2:$context})
+
+snippet round
+abbr 浮動小数点数を丸める
+  round(${1:$val}, ${2:$precision}, ${3:$mode})
+
+snippet rsort
+abbr 配列を逆順にソートする
+  rsort(${1:&$array}, ${2:$sort_flags})
+
+snippet rtrim
+abbr 文字列の最後から空白(もしくはその他の文字)を取り除く
+  rtrim(${1:$str}, ${2:$character_mask})
+
+snippet scandir
+abbr  指定されたパスのファイルとディレクトリのリストを取得する
+  scandir(${1:$directory}, ${2:$sorting_order}, ${3:$context})
+
+snippet serialize
+abbr 値の保存可能な表現を生成する
+  serialize(${1:$value})
+
+snippet session_cache_expire
+abbr 現在のキャッシュの有効期限を返す
+  session_cache_expire(${1:$new_cache_expire})
+
+snippet session_cache_limiter
+abbr 現在のキャッシュリミッタを取得または設定する
+  session_cache_limiter(${1:$cache_limiter})
+
+snippet session_commit
+abbr session_write_close()のエイリアス
+  session_commit()
+
+snippet session_decode
+abbr セッションエンコードされた文字列からセッションデータをデコードする
+  session_decode(${1:$data})
+
+snippet session_destroy
+abbr セッションに登録されたデータを全て破棄する
+  session_destroy()
+
+snippet session_encode
+abbr 現在のセッションデータを、セッションエンコードされた文字列に変換する
+  session_encode()
+
+snippet session_get_cookie_params
+abbr セッションクッキーのパラメータを得る
+  session_get_cookie_params()
+
+snippet session_id
+abbr 現在のセッション ID を取得または設定する
+  session_id(${1:$id})
+
+snippet session_module_name
+abbr 現在のセッションモジュールを取得または設定する
+  session_module_name(${1:$module})
+
+snippet session_name
+abbr 現在のセッション名を取得または設定する
+  session_name(${1:$name})
+
+snippet session_regenerate_id
+abbr  現在のセッションIDを新しく生成したものと置き換える
+  session_regenerate_id(${1:$delete_old_session})
+
+snippet session_register_shutdown
+abbr セッションのシャットダウン関数
+  session_register_shutdown()
+
+snippet session_save_path
+abbr 現在のセッションデータ保存パスを取得または設定する
+  session_save_path(${1:$path})
+
+snippet session_set_cookie_params
+abbr セッションクッキーパラメータを設定する
+  session_set_cookie_params(${1:$lifetime}, ${2:$path}, ${3:$domain}, ${4:$secure}, ${5:$httponly})
+
+snippet session_set_save_handler
+abbr ユーザー定義のセッション保存関数を設定する
+  session_set_save_handler(${1:$open}, ${2:$close}, ${3:$read}, ${4:$write}, ${5:$destroy}, ${6:$gc})
+
+snippet session_start
+abbr 新しいセッションを開始、あるいは既存のセッションを再開する
+  session_start()
+
+snippet session_status
+abbr 現在のセッションの状態を返す
+  session_status()
+
+snippet session_unset
+abbr 全てのセッション変数を開放する
+  session_unset()
+
+snippet session_write_close
+abbr セッションデータを書き込んでセッションを終了する
+  session_write_close()
+
+snippet set_error_handler
+abbr ユーザー定義のエラーハンドラ関数を設定する
+  set_error_handler(${1:$error_handler}, ${2:$error_types})
+
+snippet set_exception_handler
+abbr  ユーザー定義の例外ハンドラ関数を設定する
+  set_exception_handler(${1:$exception_handler})
+
+snippet set_file_buffer
+abbr stream_set_write_buffer()のエイリアス
+  set_file_buffer()
+
+snippet set_include_path
+abbr include_path 設定オプションをセットする
+  set_include_path(${1:$new_include_path})
+
+snippet set_time_limit
+abbr 実行時間の最大値を制限する
+  set_time_limit(${1:$seconds})
+
+snippet setcookie
+abbr クッキーを送信する
+  setcookie(${1:$name}, ${2:$value}, ${3:$expire}, ${4:$path}, ${5:$domain}, ${6:$secure}, ${7:$httponly})
+
+snippet setlocale
+abbr ロケール情報を設定する
+  setlocale(${1:$category}, ${2:$locale}, ${3:$...})
+
+snippet setrawcookie
+abbr 値を URL エンコードせずにクッキーを送信する
+  setrawcookie(${1:$name}, ${2:$value}, ${3:$expire}, ${4:$path}, ${5:$domain}, ${6:$secure}, ${7:$httponly})
+
+snippet settype
+abbr 変数の型をセットする
+  settype(${1:&$var}, ${2:$type})
+
+snippet sha1
+abbr 文字列の sha1 ハッシュを計算する
+  sha1(${1:$str}, ${2:$raw_output})
+
+snippet sha1_file
+abbr ファイルの sha1 ハッシュを計算する
+  sha1_file(${1:$filename}, ${2:$raw_output})
+
+snippet shell_exec
+abbr シェルによりコマンドを実行し、文字列として出力全体を返す
+  shell_exec(${1:$cmd})
+
+snippet show_source
+abbr highlight_file()のエイリアス
+  show_source()
+
+snippet shuffle
+abbr 配列をシャッフルする
+  shuffle(${1:&$array})
+
+snippet similar_text
+abbr 二つの文字列の間の類似性を計算する
+  similar_text(${1:$first}, ${2:$second}, ${3:&$percent})
+
+snippet simplexml_import_dom
+abbr DOM ノードから SimpleXMLElement オブジェクトを取得する
+  simplexml_import_dom(${1:$node}, ${2:$class_name})
+
+snippet simplexml_load_file
+abbr  XMLファイルをパースし、オブジェクトに代入する
+  simplexml_load_file(${1:$filename}, ${2:$class_name}, ${3:$options}, ${4:$ns}, ${5:$is_prefix})
+
+snippet simplexml_load_string
+abbr  XML 文字列をオブジェクトに代入する
+  simplexml_load_string(${1:$data}, ${2:$class_name}, ${3:$options}, ${4:$ns}, ${5:$is_prefix})
+
+snippet sin
+abbr 正弦（サイン）
+  sin(${1:$arg})
+
+snippet sinh
+abbr 双曲線正弦（ハイパボリックサイン）
+  sinh(${1:$arg})
+
+snippet sizeof
+abbr count()のエイリアス
+  sizeof()
+
+snippet sleep
+abbr 実行を遅延させる
+  sleep(${1:$seconds})
+
+snippet socket_get_status
+abbr stream_get_meta_data()のエイリアス
+  socket_get_status()
+
+snippet socket_set_blocking
+abbr stream_set_blocking()のエイリアス
+  socket_set_blocking()
+
+snippet socket_set_timeout
+abbr stream_set_timeout()のエイリアス
+  socket_set_timeout()
+
+snippet sort
+abbr 配列をソートする
+  sort(${1:&$array}, ${2:$sort_flags})
+
+snippet soundex
+abbr 文字列の soundex キーを計算する
+  soundex(${1:$str})
+
+snippet spl_autoload
+abbr __autoload()のデフォルト実装
+  spl_autoload(${1:$class_name}, ${2:$file_extensions})
+
+snippet spl_autoload_call
+abbr 要求されたクラスを読み込むために、すべての登録済みの __autoload()関数を試す
+  spl_autoload_call(${1:$class_name})
+
+snippet spl_autoload_extensions
+abbr spl_autoload 用のデフォルトの拡張子を登録し、それを返す
+  spl_autoload_extensions(${1:$file_extensions})
+
+snippet spl_autoload_functions
+abbr すべての登録済み __autoload()関数を返す
+  spl_autoload_functions()
+
+snippet spl_autoload_register
+abbr 指定した関数を __autoload()の実装として登録する
+  spl_autoload_register(${1:$autoload_function}, ${2:$throw}, ${3:$prepend})
+
+snippet spl_autoload_unregister
+abbr 指定した関数の、__autoload()の実装としての登録を解除する
+  spl_autoload_unregister(${1:$autoload_function})
+
+snippet spl_classes
+abbr 利用可能な SPL クラスを返す
+  spl_classes()
+
+snippet spl_object_hash
+abbr  指定したオブジェクトのハッシュ ID を返す
+  spl_object_hash(${1:$obj})
+
+snippet sprintf
+abbr フォーマットされた文字列を返す
+  sprintf(${1:$format}, ${2:$args}, ${3:$...})
+
+snippet sqrt
+abbr 平方根
+  sqrt(${1:$arg})
+
+snippet srand
+abbr 乱数ジェネレータを初期化する
+  srand(${1:$seed})
+
+snippet sscanf
+abbr フォーマット文字列に基づき入力を処理する
+  sscanf(${1:$str}, ${2:$format}, ${3:&$...})
+
+snippet stat
+abbr ファイルに関する情報を取得する
+  stat(${1:$filename})
+
+snippet str_getcsv
+abbr  CSV 文字列をパースして配列に格納する
+  str_getcsv(${1:$input}, ${2:$delimiter}, ${3:$enclosure}, ${4:$escape})
+
+snippet str_ireplace
+abbr 大文字小文字を区別しない str_replace()
+  str_ireplace(${1:$search}, ${2:$replace}, ${3:$subject}, ${4:&$count})
+
+snippet str_pad
+abbr 文字列を固定長の他の文字列で埋める
+  str_pad(${1:$input}, ${2:$pad_length}, ${3:$pad_string}, ${4:$pad_type})
+
+snippet str_repeat
+abbr 文字列を反復する
+  str_repeat(${1:$input}, ${2:$multiplier})
+
+snippet str_replace
+abbr 検索文字列に一致したすべての文字列を置換する
+  str_replace(${1:$search}, ${2:$replace}, ${3:$subject}, ${4:&$count})
+
+snippet str_rot13
+abbr 文字列に rot13 変換を行う
+  str_rot13(${1:$str})
+
+snippet str_shuffle
+abbr 文字列をランダムにシャッフルする
+  str_shuffle(${1:$str})
+
+snippet str_split
+abbr 文字列を配列に変換する
+  str_split(${1:$string}, ${2:$split_length})
+
+snippet str_word_count
+abbr  文字列に使用されている単語についての情報を返す
+  str_word_count(${1:$string}, ${2:$format}, ${3:$charlist})
+
+snippet strcasecmp
+abbr 大文字小文字を区別しないバイナリセーフな文字列比較を行う
+  strcasecmp(${1:$str1}, ${2:$str2})
+
+snippet strchr
+abbr strstr()のエイリアス
+  strchr()
+
+snippet strcmp
+abbr バイナリセーフな文字列比較
+  strcmp(${1:$str1}, ${2:$str2})
+
+snippet strcoll
+abbr ロケールに基づく文字列比較
+  strcoll(${1:$str1}, ${2:$str2})
+
+snippet strcspn
+abbr マスクにマッチしない最初のセグメントの長さを返す
+  strcspn(${1:$str1}, ${2:$str2}, ${3:$start}, ${4:$length})
+
+snippet stream_bucket_append
+abbr  bucket を brigade に追加する
+  stream_bucket_append(${1:$brigade}, ${2:$bucket})
+
+snippet stream_bucket_make_writeable
+abbr  操作する brigade から bucket オブジェクトを返す
+  stream_bucket_make_writeable(${1:$brigade})
+
+snippet stream_bucket_new
+abbr  現在のストリームで使用する新しい bucket を作成する
+  stream_bucket_new(${1:$stream}, ${2:$buffer})
+
+snippet stream_bucket_prepend
+abbr  bucket を brigade の先頭に追加する
+  stream_bucket_prepend(${1:$brigade}, ${2:$bucket})
+
+snippet stream_context_create
+abbr ストリームコンテキストを作成する
+  stream_context_create(${1:$options}, ${2:$params})
+
+snippet stream_context_get_default
+abbr デフォルトのストリームコンテキストを取得する
+  stream_context_get_default(${1:$options})
+
+snippet stream_context_get_options
+abbr ストリーム / ラッパー / コンテキストに設定されているオプションを取得する
+  stream_context_get_options(${1:$stream_or_context})
+
+snippet stream_context_get_params
+abbr コンテキストのパラメータを取得する
+  stream_context_get_params(${1:$stream_or_context})
+
+snippet stream_context_set_default
+abbr デフォルトのストリームコンテキストを設定する
+  stream_context_set_default(${1:$options})
+
+snippet stream_context_set_option
+abbr ストリーム / ラッパー / コンテキストのオプションを設定する
+  stream_context_set_option(${1:$stream_or_context}, ${2:$wrapper}, ${3:$option}, ${4:$value})
+
+snippet stream_context_set_params
+abbr ストリーム / ラッパー / コンテキストのパラメータを設定する
+  stream_context_set_params(${1:$stream_or_context}, ${2:$params})
+
+snippet stream_copy_to_stream
+abbr データをあるストリームから別のストリームにコピーする
+  stream_copy_to_stream(${1:$source}, ${2:$dest}, ${3:$maxlength}, ${4:$offset})
+
+snippet stream_filter_append
+abbr ストリームにフィルタを付加する
+  stream_filter_append(${1:$stream}, ${2:$filtername}, ${3:$read_write}, ${4:$params})
+
+snippet stream_filter_prepend
+abbr フィルタをストリームに付加する
+  stream_filter_prepend(${1:$stream}, ${2:$filtername}, ${3:$read_write}, ${4:$params})
+
+snippet stream_filter_register
+abbr ユーザー定義のストリームフィルタを登録する
+  stream_filter_register(${1:$filtername}, ${2:$classname})
+
+snippet stream_filter_remove
+abbr ストリームからフィルタを取り除く
+  stream_filter_remove(${1:$stream_filter})
+
+snippet stream_get_contents
+abbr 残りのストリームを文字列に読み込む
+  stream_get_contents(${1:$handle}, ${2:$maxlength}, ${3:$offset})
+
+snippet stream_get_filters
+abbr 登録されているフィルタのリストを取得する
+  stream_get_filters()
+
+snippet stream_get_line
+abbr 指定されたデリミタの位置までのデータを一行分としてストリームから読み込む
+  stream_get_line(${1:$handle}, ${2:$length}, ${3:$ending})
+
+snippet stream_get_meta_data
+abbr ヘッダーあるいはメタデータをストリームまたはファイルポインタから取得する
+  stream_get_meta_data(${1:$stream})
+
+snippet stream_get_transports
+abbr 登録されたソケットのトランスポートの一覧を取得する
+  stream_get_transports()
+
+snippet stream_get_wrappers
+abbr 登録されているストリームのラッパーのリストを取得する
+  stream_get_wrappers()
+
+snippet stream_is_local
+abbr ローカルストリームかどうかを調べる
+  stream_is_local(${1:$stream_or_url})
+
+snippet stream_register_wrapper
+abbr stream_wrapper_register()のエイリアス
+  stream_register_wrapper()
+
+snippet stream_resolve_include_path
+abbr  インクルードパスに対してファイル名を解決する
+  stream_resolve_include_path(${1:$filename})
+
+snippet stream_select
+abbr select()システムコールと同等の操作を、 ストリームの配列に対して tv_sec と tv_usec で指定されたタイムアウト時間をもって行う
+  stream_select(${1:&$read}, ${2:&$write}, ${3:&$except}, ${4:$tv_sec}, ${5:$tv_usec})
+
+snippet stream_set_blocking
+abbr ストリームのブロックモードを有効にする / 解除する
+  stream_set_blocking(${1:$stream}, ${2:$mode})
+
+snippet stream_set_chunk_size
+abbr ストリームのチャンクサイズを設定する
+  stream_set_chunk_size(${1:$fp}, ${2:$chunk_size})
+
+snippet stream_set_read_buffer
+abbr 指定したストリームのファイル読み込みバッファリングを有効にする
+  stream_set_read_buffer(${1:$stream}, ${2:$buffer})
+
+snippet stream_set_timeout
+abbr ストリームにタイムアウトを設定する
+  stream_set_timeout(${1:$stream}, ${2:$seconds}, ${3:$microseconds})
+
+snippet stream_set_write_buffer
+abbr 指定されたストリームのファイル書き込みバッファリングを有効にする
+  stream_set_write_buffer(${1:$stream}, ${2:$buffer})
+
+snippet stream_socket_accept
+abbr stream_socket_server()で作られたソケットの接続を受け入れる
+  stream_socket_accept(${1:$server_socket}, ${2:$timeout}, ${3:&$peername})
+
+snippet stream_socket_client
+abbr インターネットドメインまたは Unix ドメインのソケット接続を開く
+  stream_socket_client(${1:$remote_socket}, ${2:&$errno}, ${3:&$errstr}, ${4:$timeout}, ${5:$flags}, ${6:$context})
+
+snippet stream_socket_enable_crypto
+abbr 接続済みのソケットについて暗号化の on/off を切り替える
+  stream_socket_enable_crypto(${1:$stream}, ${2:$enable}, ${3:$crypto_type}, ${4:$session_stream})
+
+snippet stream_socket_get_name
+abbr ローカルまたはリモートのソケットの名前を取得する
+  stream_socket_get_name(${1:$handle}, ${2:$want_peer})
+
+snippet stream_socket_pair
+abbr  接続された、区別できないソケットストリームの組を作成する
+  stream_socket_pair(${1:$domain}, ${2:$type}, ${3:$protocol})
+
+snippet stream_socket_recvfrom
+abbr 接続されているかどうかにかかわらず、ソケットからのデータを受信する
+  stream_socket_recvfrom(${1:$socket}, ${2:$length}, ${3:$flags}, ${4:&$address})
+
+snippet stream_socket_sendto
+abbr 接続されているかどうかにかかわらず、ソケットにデータを送信する
+  stream_socket_sendto(${1:$socket}, ${2:$data}, ${3:$flags}, ${4:$address})
+
+snippet stream_socket_server
+abbr インターネットドメインまたは Unix ドメインのサーバーソケットを作成する
+  stream_socket_server(${1:$local_socket}, ${2:&$errno}, ${3:&$errstr}, ${4:$flags}, ${5:$context})
+
+snippet stream_socket_shutdown
+abbr 全二重接続を終了する
+  stream_socket_shutdown(${1:$stream}, ${2:$how})
+
+snippet stream_supports_lock
+abbr ストリームがロックをサポートしているかどうかを調べる
+  stream_supports_lock(${1:$stream})
+
+snippet stream_wrapper_register
+abbr PHP のクラスとして実装された URL ラッパーを登録する
+  stream_wrapper_register(${1:$protocol}, ${2:$classname}, ${3:$flags})
+
+snippet stream_wrapper_restore
+abbr 事前に登録を解除された組み込みラッパーを復元する
+  stream_wrapper_restore(${1:$protocol})
+
+snippet stream_wrapper_unregister
+abbr URL ラッパーの登録を解除する
+  stream_wrapper_unregister(${1:$protocol})
+
+snippet strftime
+abbr  ロケールの設定に基づいてローカルな日付・時間をフォーマットする
+  strftime(${1:$format}, ${2:$timestamp})
+
+snippet strip_tags
+abbr 文字列から HTML および PHP タグを取り除く
+  strip_tags(${1:$str}, ${2:$allowable_tags})
+
+snippet stripcslashes
+abbr addcslashes()でクォートされた文字列をアンクォートする
+  stripcslashes(${1:$str})
+
+snippet stripos
+abbr 大文字小文字を区別せずに文字列が最初に現れる位置を探す
+  stripos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet stripslashes
+abbr クォートされた文字列のクォート部分を取り除く
+  stripslashes(${1:$str})
+
+snippet stristr
+abbr 大文字小文字を区別しない strstr()
+  stristr(${1:$haystack}, ${2:$needle}, ${3:$before_needle})
+
+snippet strlen
+abbr 文字列の長さを得る
+  strlen(${1:$string})
+
+snippet strnatcasecmp
+abbr "自然順"アルゴリズムにより大文字小文字を区別しない文字列比較を行う
+  strnatcasecmp(${1:$str1}, ${2:$str2})
+
+snippet strnatcmp
+abbr "自然順"アルゴリズムにより文字列比較を行う
+  strnatcmp(${1:$str1}, ${2:$str2})
+
+snippet strncasecmp
+abbr バイナリセーフで大文字小文字を区別しない文字列比較を、最初の n 文字について行う
+  strncasecmp(${1:$str1}, ${2:$str2}, ${3:$len})
+
+snippet strncmp
+abbr 最初の n 文字についてバイナリセーフな文字列比較を行う
+  strncmp(${1:$str1}, ${2:$str2}, ${3:$len})
+
+snippet strpbrk
+abbr 文字列の中から任意の文字を探す
+  strpbrk(${1:$haystack}, ${2:$char_list})
+
+snippet strpos
+abbr 文字列内の部分文字列が最初に現れる場所を見つける
+  strpos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet strptime
+abbr  strftime()が生成した日付/時刻をパースする
+  strptime(${1:$date}, ${2:$format})
+
+snippet strrchr
+abbr 文字列中に文字が最後に現れる場所を取得する
+  strrchr(${1:$haystack}, ${2:$needle})
+
+snippet strrev
+abbr 文字列を逆順にする
+  strrev(${1:$string})
+
+snippet strripos
+abbr 文字列中で、特定の(大文字小文字を区別しない)文字列が最後に現れた位置を探す
+  strripos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet strrpos
+abbr 文字列中に、ある部分文字列が最後に現れる場所を探す
+  strrpos(${1:$haystack}, ${2:$needle}, ${3:$offset})
+
+snippet strspn
+abbr  指定したマスク内に含まれる文字からなる文字列の最初のセグメントの長さを探す
+  strspn(${1:$subject}, ${2:$mask}, ${3:$start}, ${4:$length})
+
+snippet strstr
+abbr 文字列が最初に現れる位置を見つける
+  strstr(${1:$haystack}, ${2:$needle}, ${3:$before_needle})
+
+snippet strtok
+abbr 文字列をトークンに分割する
+  strtok(${1:$str}, ${2:$token})
+
+snippet strtolower
+abbr 文字列を小文字にする
+  strtolower(${1:$str})
+
+snippet strtotime
+abbr  英文形式の日付を Unix タイムスタンプに変換する
+  strtotime(${1:$time}, ${2:$now})
+
+snippet strtoupper
+abbr 文字列を大文字にする
+  strtoupper(${1:$string})
+
+snippet strtr
+abbr 文字の変換あるいは部分文字列の置換を行う
+  strtr(${1:$str}, ${2:$from}, ${3:$to})
+
+snippet strval
+abbr 変数の文字列としての値を取得する
+  strval(${1:$var})
+
+snippet substr
+abbr 文字列の一部分を返す
+  substr(${1:$string}, ${2:$start}, ${3:$length})
+
+snippet substr_compare
+abbr 指定した位置から指定した長さの 2 つの文字列について、バイナリ対応で比較する
+  substr_compare(${1:$main_str}, ${2:$str}, ${3:$offset}, ${4:$length}, ${5:$case_insensitivity})
+
+snippet substr_count
+abbr 副文字列の出現回数を数える
+  substr_count(${1:$haystack}, ${2:$needle}, ${3:$offset}, ${4:$length})
+
+snippet substr_replace
+abbr 文字列の一部を置換する
+  substr_replace(${1:$string}, ${2:$replacement}, ${3:$start}, ${4:$length})
+
+snippet symlink
+abbr シンボリックリンクを作成する
+  symlink(${1:$target}, ${2:$link})
+
+snippet sys_get_temp_dir
+abbr 一時ファイル用に使用されるディレクトリのパスを返す
+  sys_get_temp_dir()
+
+snippet sys_getloadavg
+abbr システムの平均負荷を取得する
+  sys_getloadavg()
+
+snippet syslog
+abbr システムログのメッセージを生成する
+  syslog(${1:$priority}, ${2:$message})
+
+snippet system
+abbr 外部プログラムを実行し、出力を表示する
+  system(${1:$command}, ${2:&$return_var})
+
+snippet tan
+abbr 正接（タンジェント）
+  tan(${1:$arg})
+
+snippet tanh
+abbr 双曲線正接（ハイパボリックタンジェント）
+  tanh(${1:$arg})
+
+snippet tempnam
+abbr 一意なファイル名を生成する
+  tempnam(${1:$dir}, ${2:$prefix})
+
+snippet time
+abbr 現在の Unix タイムスタンプを返す
+  time()
+
+snippet time_nanosleep
+abbr 秒およびナノ秒単位で実行を遅延する
+  time_nanosleep(${1:$seconds}, ${2:$nanoseconds})
+
+snippet time_sleep_until
+abbr  指定した時刻まで実行を遅延する
+  time_sleep_until(${1:$timestamp})
+
+snippet timezone_abbreviations_list
+abbr DateTimeZone::listAbbreviations()のエイリアス
+  timezone_abbreviations_list()
+
+snippet timezone_identifiers_list
+abbr DateTimeZone::listIdentifiers()のエイリアス
+  timezone_identifiers_list()
+
+snippet timezone_location_get
+abbr DateTimeZone::getLocation()のエイリアス
+  timezone_location_get()
+
+snippet timezone_name_from_abbr
+abbr 略称からタイムゾーン名を返す
+  timezone_name_from_abbr(${1:$abbr}, ${2:$gmtOffset}, ${3:$isdst})
+
+snippet timezone_name_get
+abbr DateTimeZone::getName()のエイリアス
+  timezone_name_get()
+
+snippet timezone_offset_get
+abbr DateTimeZone::getOffset()のエイリアス
+  timezone_offset_get()
+
+snippet timezone_open
+abbr DateTimeZone::__construct()のエイリアス
+  timezone_open()
+
+snippet timezone_transitions_get
+abbr DateTimeZone::getTransitions()のエイリアス
+  timezone_transitions_get()
+
+snippet timezone_version_get
+abbr  timezonedb のバージョンを取得する
+  timezone_version_get()
+
+snippet tmpfile
+abbr テンポラリファイルを作成する
+  tmpfile()
+
+snippet token_get_all
+abbr 指定したソースを PHP トークンに分割する
+  token_get_all(${1:$source})
+
+snippet token_name
+abbr 指定した PHP トークンのシンボル名を取得する
+  token_name(${1:$token})
+
+snippet touch
+abbr ファイルの最終アクセス時刻および最終更新日をセットする
+  touch(${1:$filename}, ${2:$time}, ${3:$atime})
+
+snippet trait_exists
+abbr トレイトが存在するかどうかを調べる
+  trait_exists(${1:$traitname}, ${2:$autoload})
+
+snippet trigger_error
+abbr ユーザーレベルのエラー/警告/通知メッセージを生成する
+  trigger_error(${1:$error_msg}, ${2:$error_type})
+
+snippet trim
+abbr  文字列の先頭および末尾にあるホワイトスペースを取り除く
+  trim(${1:$str}, ${2:$character_mask})
+
+snippet uasort
+abbr ユーザー定義の比較関数で配列をソートし、連想インデックスを保持する
+  uasort(${1:&$array}, ${2:$value_compare_func})
+
+snippet ucfirst
+abbr 文字列の最初の文字を大文字にする
+  ucfirst(${1:$str})
+
+snippet ucwords
+abbr 文字列の各単語の最初の文字を大文字にする
+  ucwords(${1:$str})
+
+snippet uksort
+abbr ユーザー定義の比較関数を用いて、キーで配列をソートする
+  uksort(${1:&$array}, ${2:$key_compare_func})
+
+snippet umask
+abbr 現在の umask を変更する
+  umask(${1:$mask})
+
+snippet uniqid
+abbr 一意な ID を生成する
+  uniqid(${1:$prefix}, ${2:$more_entropy})
+
+snippet unlink
+abbr ファイルを削除する
+  unlink(${1:$filename}, ${2:$context})
+
+snippet unpack
+abbr バイナリ文字列からデータを切り出す
+  unpack(${1:$format}, ${2:$data})
+
+snippet unregister_tick_function
+abbr 各 tick の実行用の関数の登録を解除する
+  unregister_tick_function(${1:$function_name})
+
+snippet unserialize
+abbr  保存用表現から PHP の値を生成する
+  unserialize(${1:$str})
+
+snippet urldecode
+abbr URL エンコードされた文字列をデコードする
+  urldecode(${1:$str})
+
+snippet urlencode
+abbr 文字列を URL エンコードする
+  urlencode(${1:$str})
+
+snippet user_error
+abbr trigger_error()のエイリアス
+  user_error()
+
+snippet usleep
+abbr マイクロ秒単位で実行を遅延する
+  usleep(${1:$micro_seconds})
+
+snippet usort
+abbr ユーザー定義の比較関数を使用して、配列を値でソートする
+  usort(${1:&$array}, ${2:$value_compare_func})
+
+snippet utf8_decode
+abbr  UTF-8 エンコードされた ISO-8859-1 文字列をシングルバイトの ISO-8859-1 に変換する
+  utf8_decode(${1:$data})
+
+snippet utf8_encode
+abbr ISO-8859-1 文字列を UTF-8 にエンコードする
+  utf8_encode(${1:$data})
+
+snippet var_dump
+abbr  変数に関する情報をダンプする
+  var_dump(${1:$expression}, ${2:$...})
+
+snippet var_export
+abbr  変数の文字列表現を出力または返す
+  var_export(${1:$expression}, ${2:$return})
+
+snippet version_compare
+abbr ふたつの "PHP 標準" バージョン番号文字列を比較する
+  version_compare(${1:$version1}, ${2:$version2}, ${3:$operator})
+
+snippet vfprintf
+abbr フォーマットされた文字列をストリームに書き込む
+  vfprintf(${1:$handle}, ${2:$format}, ${3:$args})
+
+snippet vprintf
+abbr フォーマットされた文字列を出力する
+  vprintf(${1:$format}, ${2:$args})
+
+snippet vsprintf
+abbr フォーマットされた文字列を返す
+  vsprintf(${1:$format}, ${2:$args})
+
+snippet wordwrap
+abbr 指定した文字数で文字列を分割する
+  wordwrap(${1:$str}, ${2:$width}, ${3:$break}, ${4:$cut})
+
+snippet xml_error_string
+abbr XML パーサのエラー文字列を得る
+  xml_error_string(${1:$code})
+
+snippet xml_get_current_byte_index
+abbr XML パーサのカレントのバイトインデックスを得る
+  xml_get_current_byte_index(${1:$parser})
+
+snippet xml_get_current_column_number
+abbr  XML パーサのカレントのカラム番号を取得する
+  xml_get_current_column_number(${1:$parser})
+
+snippet xml_get_current_line_number
+abbr XML パーサのカレントの行番号を得る
+  xml_get_current_line_number(${1:$parser})
+
+snippet xml_get_error_code
+abbr XML パーサのエラーコードを得る
+  xml_get_error_code(${1:$parser})
+
+snippet xml_parse
+abbr XML ドキュメントの処理を開始する
+  xml_parse(${1:$parser}, ${2:$data}, ${3:$is_final})
+
+snippet xml_parse_into_struct
+abbr 配列構造体に XML データを処理する
+  xml_parse_into_struct(${1:$parser}, ${2:$data}, ${3:&$values}, ${4:&$index})
+
+snippet xml_parser_create
+abbr XML パーサを作成する
+  xml_parser_create(${1:$encoding})
+
+snippet xml_parser_create_ns
+abbr 名前空間をサポートした XML パーサを生成する
+  xml_parser_create_ns(${1:$encoding}, ${2:$separator})
+
+snippet xml_parser_free
+abbr XML パーサを解放する
+  xml_parser_free(${1:$parser})
+
+snippet xml_parser_get_option
+abbr XML パーサからオプションを得る
+  xml_parser_get_option(${1:$parser}, ${2:$option})
+
+snippet xml_parser_set_option
+abbr XML パーサのオプションを設定する
+  xml_parser_set_option(${1:$parser}, ${2:$option}, ${3:$value})
+
+snippet xml_set_character_data_handler
+abbr 文字データハンドラを設定する
+  xml_set_character_data_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_default_handler
+abbr デフォルトのハンドラを設定する
+  xml_set_default_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_element_handler
+abbr 開始要素および終了要素のハンドラを設定する
+  xml_set_element_handler(${1:$parser}, ${2:$start_element_handler}, ${3:$end_element_handler})
+
+snippet xml_set_end_namespace_decl_handler
+abbr 名前空間終了ハンドラを設定する
+  xml_set_end_namespace_decl_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_external_entity_ref_handler
+abbr 外部エンティティリファレンスハンドラを設定する
+  xml_set_external_entity_ref_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_notation_decl_handler
+abbr 表記法宣言ハンドラを設定する
+  xml_set_notation_decl_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_object
+abbr オブジェクト内部で XML パーサを使用する
+  xml_set_object(${1:$parser}, ${2:&$object})
+
+snippet xml_set_processing_instruction_handler
+abbr  処理命令(PI)用ハンドラを設定する
+  xml_set_processing_instruction_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_start_namespace_decl_handler
+abbr  名前空間開始ハンドラを設定する
+  xml_set_start_namespace_decl_handler(${1:$parser}, ${2:$handler})
+
+snippet xml_set_unparsed_entity_decl_handler
+abbr  処理されないエンティティ宣言用ハンドラを設定する
+  xml_set_unparsed_entity_decl_handler(${1:$parser}, ${2:$handler})
+
+snippet xmlwriter_end_attribute
+abbr 属性を終了する
+  xmlwriter_end_attribute()
+
+snippet xmlwriter_end_cdata
+abbr 現在の CDATA を終了する
+  xmlwriter_end_cdata()
+
+snippet xmlwriter_end_comment
+abbr コメントの終了部を作成する
+  xmlwriter_end_comment()
+
+snippet xmlwriter_end_document
+abbr 現在のドキュメントを終了する
+  xmlwriter_end_document()
+
+snippet xmlwriter_end_dtd
+abbr 現在の DTD を終了する
+  xmlwriter_end_dtd()
+
+snippet xmlwriter_end_dtd_attlist
+abbr 現在の DTD 属性リストを終了する
+  xmlwriter_end_dtd_attlist()
+
+snippet xmlwriter_end_dtd_element
+abbr 現在の DTD 要素を終了する
+  xmlwriter_end_dtd_element()
+
+snippet xmlwriter_end_dtd_entity
+abbr 現在の DTD エンティティを終了する
+  xmlwriter_end_dtd_entity()
+
+snippet xmlwriter_end_element
+abbr 現在の要素を終了する
+  xmlwriter_end_element()
+
+snippet xmlwriter_end_pi
+abbr 現在の PI(処理命令)を終了する
+  xmlwriter_end_pi()
+
+snippet xmlwriter_flush
+abbr 現在のバッファをフラッシュする
+  xmlwriter_flush(${1:$empty})
+
+snippet xmlwriter_full_end_element
+abbr 現在の要素を終了する
+  xmlwriter_full_end_element()
+
+snippet xmlwriter_open_memory
+abbr 文字列の出力にメモリを使用する新しい xmlwriter を作成する
+  xmlwriter_open_memory()
+
+snippet xmlwriter_open_uri
+abbr ソース URI を指定して新しい xmlwriter を作成する
+  xmlwriter_open_uri(${1:$uri})
+
+snippet xmlwriter_output_memory
+abbr 現在のバッファを返す
+  xmlwriter_output_memory(${1:$flush})
+
+snippet xmlwriter_set_indent
+abbr 字下げの on/off を切り替える
+  xmlwriter_set_indent(${1:$indent})
+
+snippet xmlwriter_set_indent_string
+abbr 字下げに使用する文字列を設定する
+  xmlwriter_set_indent_string(${1:$indentString})
+
+snippet xmlwriter_start_attribute
+abbr 属性を開始する
+  xmlwriter_start_attribute(${1:$name})
+
+snippet xmlwriter_start_attribute_ns
+abbr 名前空間つきの属性を開始する
+  xmlwriter_start_attribute_ns(${1:$prefix}, ${2:$name}, ${3:$uri})
+
+snippet xmlwriter_start_cdata
+abbr CDATA の開始タグを作成する
+  xmlwriter_start_cdata()
+
+snippet xmlwriter_start_comment
+abbr コメントを開始する
+  xmlwriter_start_comment()
+
+snippet xmlwriter_start_document
+abbr ドキュメントタグを作成する
+  xmlwriter_start_document(${1:$version}, ${2:$encoding}, ${3:$standalone})
+
+snippet xmlwriter_start_dtd
+abbr DTD の開始タグを作成する
+  xmlwriter_start_dtd(${1:$qualifiedName}, ${2:$publicId}, ${3:$systemId})
+
+snippet xmlwriter_start_dtd_attlist
+abbr DTD 属性リストを開始する
+  xmlwriter_start_dtd_attlist(${1:$name})
+
+snippet xmlwriter_start_dtd_element
+abbr DTD 要素を開始する
+  xmlwriter_start_dtd_element(${1:$qualifiedName})
+
+snippet xmlwriter_start_dtd_entity
+abbr DTD エンティティを開始する
+  xmlwriter_start_dtd_entity(${1:$name}, ${2:$isparam})
+
+snippet xmlwriter_start_element
+abbr 要素の開始タグを作成する
+  xmlwriter_start_element(${1:$name})
+
+snippet xmlwriter_start_element_ns
+abbr 名前空間つき要素の開始タグを作成する
+  xmlwriter_start_element_ns(${1:$prefix}, ${2:$name}, ${3:$uri})
+
+snippet xmlwriter_start_pi
+abbr PI(処理命令)の開始タグを作成する
+  xmlwriter_start_pi(${1:$target})
+
+snippet xmlwriter_text
+abbr テキストを書き込む
+  xmlwriter_text(${1:$content})
+
+snippet xmlwriter_write_attribute
+abbr 属性全体を書き込む
+  xmlwriter_write_attribute(${1:$name}, ${2:$value})
+
+snippet xmlwriter_write_attribute_ns
+abbr 名前空間つき属性全体を書き込む
+  xmlwriter_write_attribute_ns(${1:$prefix}, ${2:$name}, ${3:$uri}, ${4:$content})
+
+snippet xmlwriter_write_cdata
+abbr CDATA タグ全体を書き込む
+  xmlwriter_write_cdata(${1:$content})
+
+snippet xmlwriter_write_comment
+abbr コメントタグ全体を書き込む
+  xmlwriter_write_comment(${1:$content})
+
+snippet xmlwriter_write_dtd
+abbr DTD タグ全体を書き込む
+  xmlwriter_write_dtd(${1:$name}, ${2:$publicId}, ${3:$systemId}, ${4:$subset})
+
+snippet xmlwriter_write_dtd_attlist
+abbr DTD 属性リストタグ全体を書き込む
+  xmlwriter_write_dtd_attlist(${1:$name}, ${2:$content})
+
+snippet xmlwriter_write_dtd_element
+abbr DTD 要素タグ全体を書き込む
+  xmlwriter_write_dtd_element(${1:$name}, ${2:$content})
+
+snippet xmlwriter_write_dtd_entity
+abbr DTD エンティティタグ全体を書き込む
+  xmlwriter_write_dtd_entity(${1:$name}, ${2:$content}, ${3:$pe}, ${4:$pubid}, ${5:$sysid}, ${6:$ndataid})
+
+snippet xmlwriter_write_element
+abbr 要素タグ全体を書き込む
+  xmlwriter_write_element(${1:$name}, ${2:$content})
+
+snippet xmlwriter_write_element_ns
+abbr 名前空間つき要素タグ全体を書き込む
+  xmlwriter_write_element_ns(${1:$prefix}, ${2:$name}, ${3:$uri}, ${4:$content})
+
+snippet xmlwriter_write_pi
+abbr PI(処理命令)書き込む
+  xmlwriter_write_pi(${1:$target}, ${2:$content})
+
+snippet xmlwriter_write_raw
+abbr 生の XML テキストを書き込む
+  xmlwriter_write_raw(${1:$content})
+
+snippet zend_version
+abbr 現在の Zend Engine のバージョンを取得する
+  zend_version()
+
+snippet zlib_decode
+abbr raw/gzip/zlib で符号化されたデータを復元する
+  zlib_decode(${1:$data}, ${2:$max_decoded_len})
+
+snippet zlib_encode
+abbr 指定した符号化方式でデータを圧縮する
+  zlib_encode(${1:$data}, ${2:$encoding}, ${3:$level})
+
+snippet zlib_get_coding_type
+abbr 出力圧縮に使用されたコーディングの種類を返す
+  zlib_get_coding_type()
+
+snippet ?
+    <?php ${1} ?>${0}
+
+snippet ?=
+    <?= ${1} ?>${0}

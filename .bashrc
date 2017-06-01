@@ -3,6 +3,8 @@ alias ll='ls -lG'
 alias la='ls -laG'
 alias hs="history | grep $@ "
 alias ssh="~/.ssh-theme"
+alias vi='/usr/local/bin/vim'
+alias ctags="`brew --prefix`/bin/ctags"
 shopt -s autocd
 
 #suffix alias
@@ -22,28 +24,30 @@ command_not_found_handle () {
 # プロンプトの設定
 PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 #PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME} \007"'
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}:${HOSTNAME%%.*}\007"'
+
 
 [[ -n "$VIMRUNTIME" ]] && \
     PS1='(VIM) \W \t $ '
 
 if [ "$(uname)" == 'Darwin' ]; then
-	#mac
+    #mac
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
     fi
     if [ -L ${HOME}/.Trash_b ]; then
         alias rm='gmv --backup=numbered --target-directory=${HOME}/.Trash_b'
-    fi 
-	:
+    fi
+    :
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-	#linux
+    #linux
     if [ -L ${HOME}/.Trash_b ]; then
         alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash_b'
-    fi 
-	:
+    fi
+    :
 elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
-	#cygwin
-	:
+    #cygwin
+    :
 else
-	:
+    :
 fi
