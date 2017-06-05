@@ -348,6 +348,9 @@ set showmatch
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
+" コマンドのヒストリー数
+set history=1000
+
 autocmd FileType text setlocal textwidth=0
 " 構文毎に文字色を変化させる
 syntax on:
