@@ -3459,3 +3459,9 @@ snippet ?
 
 snippet ?=
     <?= ${1} ?>
+
+
+snippet pcforeach
+    <?php foreach ($${1:#:variable} as $${2:#:value}): ?>
+    ${0:TARGET}
+    <?php endforeach; ?>

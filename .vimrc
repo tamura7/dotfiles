@@ -32,7 +32,6 @@ NeoBundle 'xolox/vim-session', {
 " Qfreplace 使用
 NeoBundle "thinca/vim-qfreplace"
 
-
 " " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " " Unite.vimで最近使ったファイルを表示できるようにする
@@ -68,8 +67,11 @@ function! UniteFileCurrentDir()
 endfunction
 
 autocmd FileType vimfiler nnoremap <silent> <buffer> <expr>/ vimfiler#do_switch_action('rec/async')
+autocmd FileType vimfiler nnoremap <silent> <buffer> <expr>ff vimfiler#do_switch_action('find')
+autocmd FileType vimfiler nnoremap <silent> <buffer> <expr>gg vimfiler#do_switch_action('grep')
 autocmd FileType vimfiler nnoremap <silent> <buffer> <expr>v vimfiler#do_switch_action('vsplit')
 autocmd FileType vimfiler nnoremap <silent> <buffer> <expr>s vimfiler#do_switch_action('split')
+autocmd FileType vimfiler nnoremap <silent> <buffer> <expr>tt vimfiler#do_switch_action('tabopen')
 
 nnoremap <silent><C-e> :VimFilerExplor -winwidth=35 <CR>
 :command! -nargs=* Vf VimFilerExplor <args>
@@ -175,9 +177,9 @@ let g:vim_markdown_folding_disabled = 1
 " }}}
 
 "カーソル移動機能を拡張
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'vimtaku/hl_matchit.vim.git'
+" NeoBundle 'tpope/vim-surround'
+ NeoBundle 'vim-scripts/matchit.zip'
+" NeoBundle 'vimtaku/hl_matchit.vim.git'
 
 let b:match_words = '<:>,<div.*>:</div>'
 let b:match_words = "if:endif,foreach:endforeach,\<begin\>:\<end\>"
@@ -242,8 +244,8 @@ let g:user_emmet_settings = {
 "
 " " html
 "
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'othree/html5.vim'
+" NeoBundle 'hail2u/vim-css3-syntax'
+" NeoBundle 'othree/html5.vim'
 
 augroup VimCSS3Syntax
   autocmd!
@@ -354,7 +356,7 @@ set history=1000
 autocmd FileType text setlocal textwidth=0
 " 構文毎に文字色を変化させる
 syntax on:
-set synmaxcol=200
+"set synmaxcol=200
 
 "行を強調表示
 hi clear CursorLine
@@ -391,7 +393,7 @@ augroup END
 set lazyredraw
 set ttyfast
 
-set timeout timeoutlen=200 ttimeoutlen=75
+ set timeout timeoutlen=200 ttimeoutlen=75
 
 "行番号の色
 autocmd ColorScheme * highlight LineNr ctermfg=247
@@ -416,7 +418,6 @@ command! DiffOrigcmp vert new | set bt=nofile | r # | -1d_ | diffthis | wincmd p
 "キーマップ設定
 nnoremap <silent><leader>q :bp<cr>:bd #<cr>
 nnoremap <silent><Leader>s :sp<CR><C-W><C-W>:VimShell<CR>
-nnoremap <silent><Leader>c viwy
 
 "tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
@@ -433,7 +434,7 @@ noremap <silent>zh <C-w>h
 noremap <silent>zk <C-w>k
 noremap <silent>zj <C-w>j
 noremap <silent>zb <C-W>J
-noremap <silent>zv <C-W>L
+noremap <silent>zv <C-W>H
 noremap <silent><Tab> <C-w><C-w>
 noremap <silent><S-Tab> <C-w>W
 
@@ -456,11 +457,15 @@ nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
 
 "カーソル行ハイライト
-nnoremap <silent><Leader><Leader> "zyiw:let @/ =  @z <CR>:set hlsearch<CR>
+nnoremap <silent><Leader><Leader> "zyiw:let @/ = '\<' . @z . '\>' <CR>:set hlsearch<CR>
+vnoremap <silent><Leader><Leader> "zy:let @/ =  @z <CR>:set hlsearch<CR>
 
 "カーソル下の単語をハイライトしてから置換
-nmap <Leader>h <Space><Space>:%s/<C-r>///gI<Left><Left><Left>
-vnoremap <Leader>h <Space><Space>:s/<C-r>///gI<Left><Left><Left>
+nmap <Leader>h <Leader><Leader>:%s/<C-r>///gIc<Left><Left><Left><Left>
+vnoremap  <Leader>h "zy:let @/ =  @z <CR>:set hlsearch<CR>%s/<C-r>///gIc<Left><Left><Left><Left>
+
+nmap h<Leader> :%s/<C-r>///gIc<Left><Left><Left><Left>
+vnoremap h<Leader> :s/<C-r>///gIc<Left><Left><Left><Left>
 
 "ノーマルモードで改行
 nnoremap z<CR> i<CR><ESC>
@@ -470,12 +475,13 @@ nnoremap za<CR> a<CR><ESC>
 nnoremap <C-g> 1<C-g>
 
 "ハイライト消去
-nnoremap <silent> <Leader><esc> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <esc><esc> :<C-u>nohlsearch<CR><C-l>
 
 "カーソル上の単語を置き換え
-nnoremap <silent> cy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
-nnoremap <silent> cc ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
-vnoremap <silent> cc c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> cc yiw
+nnoremap <silent> cp ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> ce <C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+vnoremap <silent> ce c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 
 "home,end
 noremap <S-h>   ^
@@ -483,8 +489,7 @@ noremap <S-j>   }
 noremap <S-k>   {
 noremap <S-l>   $
 
-map <C-A> <S-g>$vgg
-map! <C-A> <Esc><S-g>$vggi
+noremap <S-A> <S-g>$vgg
 
 
 
@@ -630,15 +635,16 @@ nnoremap <silent>FF :<C-u>UniteWithCursorWord find:. -buffer-name=serch-file<CR>
  call smartinput_endwise#define_default_rules()
 
 """辞書ファイル
- autocmd BufNewFile,BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dict/php.dict filetype=php
- autocmd BufNewFile,BufRead *.css :set dictionary=~/.vim/dict/css.dict filetype=css
- autocmd BufNewFile,BufRead *.js :set dictionary=~/.vim/dict/jquery.dict filetype=javascript
- autocmd BufNewFile,BufRead *.js :set dictionary=~/.vim/dict/javascript.dict filetype=javascript
+  autocmd BufNewFile,BufRead *.php\|*.ctp\|*.tpl :set dictionary=~/.vim/dict/php.dict filetype=php
+  autocmd BufNewFile,BufRead *.html|*.htm :set dictionary=~/.vim/dict/html.dict filetype=html
+  autocmd BufNewFile,BufRead *.css :set dictionary=~/.vim/dict/css.dict filetype=css
+  autocmd BufNewFile,BufRead *.js :set dictionary=~/.vim/dict/jquery.dict filetype=javascript
+  autocmd BufNewFile,BufRead *.js :set dictionary=~/.vim/dict/javascript.dict filetype=javascript
+" "
+" "
+" " autocmd FileType php set makeprg=php\ -l\ %
 "
-"
-" autocmd FileType php set makeprg=php\ -l\ %
-
-let php_htmlInStrings=1
+ let php_htmlInStrings=1
 
 
 "-------------------------------------------------
