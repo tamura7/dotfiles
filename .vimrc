@@ -435,6 +435,7 @@ noremap <silent>zk <C-w>k
 noremap <silent>zj <C-w>j
 noremap <silent>zb <C-W>J
 noremap <silent>zv <C-W>H
+nnoremap <C-a> <C-i>
 noremap <silent><Tab> <C-w><C-w>
 noremap <silent><S-Tab> <C-w>W
 
